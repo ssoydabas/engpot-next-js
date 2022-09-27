@@ -1,0 +1,51 @@
+.student-page {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 8fr 1fr;
+    gap: 2%;
+
+    width: 100%;
+    height: 100%;
+
+    background-image: url("/2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+
+    position: relative;
+}
+.toggle-mode {
+    display: grid;
+    place-items: center;
+
+    width: 12vh;
+    height: 12vh;
+
+    margin: 1%;
+    border: 6px solid var(--secondary-color);
+    border-radius: 50%;
+
+    background-color: var(--primary-color);
+    color: #fffe;
+    box-shadow: 0 0 10px 20px var(--primary-color);
+
+    font-size: .8rem;
+    font-weight: var(--bold);
+
+
+    position: absolute;
+    top: 6%;
+    left: 2%;
+
+    z-index: 10;
+
+    transition: all ease .4s;
+    cursor: pointer;
+}
+.toggle-mode:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 10px 20px var(--secondary-color);
+}
