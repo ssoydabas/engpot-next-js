@@ -52,7 +52,7 @@ function MarkAssignment(props) {
       className={`${styles["mark-assignment"]} card highlight--dark`}
       onSubmit={onSubmitHandler}
     >
-      <div className={styles["student-answer"]}>
+      <div className={`${styles["student-answer"]} scroll`}>
         {assignment.studentInfo.answer}
       </div>
       <div className={styles["teacher-action"]}>

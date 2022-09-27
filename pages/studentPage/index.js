@@ -51,7 +51,7 @@ function StudentPage() {
       url: url,
       headers: {
         "content-type": "application/json",
-        Authorization: `Bearer ...`,
+        Authorization: `Bearer ${localStorage.getItem("authenticationToken")}`,
       },
     };
     const dataProcessingLogic = (data) => {
@@ -70,7 +70,7 @@ function StudentPage() {
       url: url,
       headers: {
         "content-type": "application/json",
-        Authorization: `Bearer ...`,
+        Authorization: `Bearer ${localStorage.getItem("authenticationToken")}`,
       },
     };
     const dataProcessingLogic = (data) => {

@@ -3,6 +3,7 @@ import styles from "./Sidebar.module.css";
 
 import Select from "./select/Select";
 import NextLesson from "./nextLesson/NextLesson";
+import Extra from "./extra/Extra"
 import ActionButtons from "./actionButtons/ActionButtons";
 
 function Sidebar(props) {
@@ -17,6 +18,7 @@ function Sidebar(props) {
       <div className={styles["side-bar"]}>
         <Select students={students} setChosenStudent={setChosenStudent} />
         {chosenStudent && <NextLesson chosenStudent={chosenStudent} />}
+        {chosenStudent && <Extra />}
         {chosenStudent && (
           <ActionButtons
             chosenStudent={chosenStudent}

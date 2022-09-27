@@ -28,12 +28,15 @@
     color: #fffe;
     box-shadow: 0 0 2px 2px #fff;
 
-    font-size: 1.2rem;
+    font-size: 1rem;
 
+    white-space: pre-line;
+    
     transition: all ease .4s;
 }
 .student-answer:hover {
     transform: scale(1.2) translateY(10%);
+
 }
 .teacher-action {
     display: grid;
