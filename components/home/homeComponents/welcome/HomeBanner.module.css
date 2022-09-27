@@ -1,0 +1,29 @@
+.banner {
+  display: grid;
+  place-items: center;
+
+  height: 20%;
+
+  transform: translateY(40%);
+
+  filter: drop-shadow(0 0 2px #fff);
+}
+.banner > div {
+  font-size: 2rem;
+  font-weight: var(--bold);
+  text-transform: uppercase;
+  text-shadow: 0 0 20px #fff;
+}
+.banner > div:first-of-type {
+  font-size: 1.4rem;
+  margin-bottom: 1%;
+  color: var(--secondary-color);
+  filter: drop-shadow(0 0 2px #000);
+  text-shadow: 2px 2px 2px #000;
+}
+.banner > div:first-of-type > span {
+  font-size: inherit;
+  color: var(--secondary-color);
+  filter: drop-shadow(0 0 2px #000);
+  text-shadow: 2px 2px 2px #000;
+}

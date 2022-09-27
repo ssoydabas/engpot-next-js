@@ -1,0 +1,22 @@
+.icons {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+
+  width: 60%;
+
+  margin: auto;
+}
+.icon-container {
+  display: grid;
+  place-items: center;
+  grid-template-rows: 5fr 1fr;
+}
+.icon-container > svg {
+  padding: 35%;
+
+  transform: translateY(30%);
+}
+.icon-container > label {
+  font-size: 1.2rem;
+}
