@@ -1,0 +1,16 @@
+.admin-panel {
+    display: grid;
+    grid-template-rows: 1fr 1fr 12fr;
+
+    width: 100%;
+    height: 100%;
+}
+.title {
+   width: 100%;
+   
+   text-align: center;
+   font-size: 1.6rem;
+   font-weight: var(--bold);
+
+   transform: translateY(20%);
+}

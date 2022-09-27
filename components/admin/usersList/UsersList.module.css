@@ -1,0 +1,12 @@
+.users-list {
+    display: grid;
+    place-items: center;
+    grid-template-rows: min-content;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 2% 6%;
+    overflow: scroll;
+    overflow-x: hidden;
+}

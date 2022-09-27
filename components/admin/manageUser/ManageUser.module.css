@@ -1,0 +1,133 @@
+.manage-user-container {
+    display: grid;
+    place-items: center;
+    grid-template-rows: 1fr 1fr 6fr;
+
+    width: 80%;
+    height: 90vh;
+
+    margin: auto;
+    padding: 1% 4%;
+
+    border: 1px solid #fffe;
+    border-radius: 8px;
+
+    background-color: var(--primary-color);
+    color: #fffe;
+
+    box-shadow: 0 0 10px 4px #fffe;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;    
+
+    z-index: 20;
+}
+.name-surname {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+
+    width: 40%;
+}
+.email-status {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10%;
+
+    width: 80%;
+
+}
+.email-status > div {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 10fr;
+    gap: 10%;
+
+}
+.email-status > div > * {
+    width: 100%;
+    text-transform: none !important;
+}
+.engpot-info {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    width: 100%;
+    height: 100%;
+}
+.assign-remove {
+    display: grid;
+    place-items: center;
+
+    height: 40%;
+
+    margin: 10% 0;
+    border: 1px solid #fff;
+    border-radius: 8px;    
+    border-color: var(--secondary-color);
+}
+.assign-remove > div:first-of-type {
+    border-bottom: 1px solid var(--secondary-color);
+}
+.assign-remove > select {
+    width: 80%;
+    font-size: 1rem !important;
+}
+.assign-remove > button {
+    padding: 1% 4%;
+}
+
+.engpot-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+
+    width: 100%;
+
+    padding: 2% 10%;
+}
+.engpot-details > div {
+    display: grid;
+    place-items: center;
+
+    width: 100%;
+
+}
+.engpot-details > div > div {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+
+    width: 100%;
+}
+.engpot-details > div > div > label {
+    font-size: 1.2rem;
+
+    transform: translateY(-40%);
+}
+
+
+
+
+
+
+.manage-user-container input,
+.manage-user-container select {
+    padding: 0 4%;
+    border: 1px solid #fff;
+    border-radius: 6px;
+  
+    background-color: var(--primary-color);
+    color: #fffe;
+  
+    font-size: 1.2rem;
+    text-align: center;
+    text-transform: capitalize;
+    }
+
+.manage-user-container > button {
+    padding: .3% 2%;
+}
