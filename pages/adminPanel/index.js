@@ -7,6 +7,8 @@ import { feedbackActions } from "../../store/feedback/feedback";
 
 import useHttp from "../../hooks/useHttp";
 
+import Head from "next/head";
+
 import Admin from "../../components/admin/Admin";
 
 import Error from "../../components/ui/components/error/Error";
@@ -59,6 +61,13 @@ function AdminPanel(props) {
 
   return (
     <Fragment>
+      <Head>
+        <title>EngPot - Admin</title>
+        <meta
+          name="description"
+          content="Manage the users on EngPot English."
+        />
+      </Head>
       {isLoading && <LoadingSpinner />}
       {httpError && (
         <Error text={httpError} onClick={closeErrorMessageHandler} />

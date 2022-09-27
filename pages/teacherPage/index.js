@@ -6,6 +6,8 @@ import { feedbackActions } from "../../store/feedback/feedback";
 
 import useHttp from "../../hooks/useHttp";
 
+import Head from "next/head";
+
 import Teacher from "../../components/teacher/Teacher";
 
 import Error from "../../components/ui/components/error/Error";
@@ -73,6 +75,13 @@ function TeacherPage() {
 
   return (
     <Fragment>
+      <Head>
+        <title>EngPot - Teacher</title>
+        <meta
+          name="description"
+          content="Manage your students by planning and concluding lessons as well as assigning various tasks."
+        />
+      </Head>
       {httpError && (
         <Error text={httpError} onClick={closeErrorMessageHandler} />
       )}
