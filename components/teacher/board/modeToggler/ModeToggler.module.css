@@ -1,0 +1,33 @@
+.mode-toggler {
+  display: grid;
+  place-items: center;
+
+  width: 8vh;
+  height: 8vh;
+
+  margin: 1%;
+  border: 6px solid var(--secondary-color);
+  border-radius: 50%;
+
+  background-color: var(--primary-color);
+  color: #fffe;
+  box-shadow: 0 0 10px 10px var(--primary-color);
+
+  font-size: 0.8rem;
+  font-weight: var(--bold);
+
+  position: absolute;
+  top: 6%;
+  left: 2%;
+
+  z-index: 10;
+
+  transition: all ease 0.4s;
+  cursor: pointer;
+}
+.mode-toggler:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 10px 10px var(--secondary-color);
+}

@@ -1,0 +1,45 @@
+.container {
+    display: grid;
+    place-items: center;
+    grid-template-rows: 1fr 1fr;
+    
+    width: 100%;
+    height: 100%;
+
+    padding: 1% 10%;
+    border-color: var(--silver-color);
+
+    background-color: var(--primary-color);
+    color: #fffe;
+}
+.title {
+    display: grid;
+    place-items: center;
+    grid-template-rows: 1fr 1fr;
+
+    width: 100%;
+    height: 100%;
+}
+.title > span {
+    width: 100%;
+    text-align: center;
+    text-transform: capitalize;
+    border-bottom: 1px solid #fffe;
+}
+.container > select {
+    width: 100%;
+    height: 40%;
+
+    font-size: .6rem;
+
+    transition: all ease .4s;
+}
+.container > select:hover {
+    transform: translateX(-40%) scale(2.2);
+}
+.container > select > option {
+    text-align: center;
+}
+.container > button {
+    padding: 1% 12%;
+}

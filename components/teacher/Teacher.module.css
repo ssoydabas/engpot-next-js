@@ -1,0 +1,10 @@
+.teacher-page {
+  display: grid;
+  grid-template-columns: 8fr 1fr;
+
+  background-image: url("/14.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
