@@ -116,6 +116,7 @@ function AuthenticationForm(props) {
       {displayForm && formMode === "signUp" && (
         <SignUpForm
           signUpRequest={handlers.signUpRequest}
+          toggleFormDisplayHandler={handlers.toggleFormDisplayHandler}
           changeFormModeHandler={handlers.changeFormModeHandler}
           formData={formData}
           setFormData={setFormData}

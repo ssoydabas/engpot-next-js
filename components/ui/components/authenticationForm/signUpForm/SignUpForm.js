@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
 import styles from "./SignUpForm.module.css";
 
+import Link from "next/link";
+
 import Button from "../../button/Button";
 
 function SignUpForm(props) {
@@ -11,6 +13,7 @@ function SignUpForm(props) {
   const confirmPasswordRef = useRef();
 
   const { signUpRequest } = props;
+  const { toggleFormDisplayHandler } = props;
   const { changeFormModeHandler } = props;
   const { setFormData } = props;
 
@@ -88,7 +91,15 @@ function SignUpForm(props) {
       >
         <div
           className={styles["internal-links"]}
-            onClick={changeFormModeHandler.bind(null, "login")}
+          onClick={toggleFormDisplayHandler}
+        >
+          <Link href={"/userProfile/resendConfirmation"}>
+            <a>Send confirmation email again?</a>
+          </Link>
+        </div>
+        <div
+          className={styles["internal-links"]}
+          onClick={changeFormModeHandler.bind(null, "login")}
         >
           Already a User?
         </div>
