@@ -44,8 +44,17 @@ function LessonHistory(props) {
     }
   }, [chosenStudent, teacher]);
 
-  lessonHistory = lessonHistory ? lessonHistory.filter((lesson) => lesson.status === "done") : null;
+  if (lessonHistory) {
+    lessonHistory = lessonHistory.filter((lesson) => lesson.status === "done");
 
+    let iterator = 1;
+    for (let lesson of lessonHistory) {
+      lesson.lessonCount = iterator;
+      iterator++;
+    }
+
+    lessonHistory.reverse();
+  }
   return (
     <Fragment>
       <div className={`${styles["lesson-history"]} scroll`}>
@@ -81,6 +90,11 @@ function LessonHistory(props) {
                   <label htmlFor="">Extra:</label>
                   <div>{lesson.subjects.extra}</div>
                 </div>
+              </div>
+              <div
+                className={`${styles["lesson-count"]} card highlight--light`}
+              >
+                {lesson.lessonCount}
               </div>
             </div>
           ))}

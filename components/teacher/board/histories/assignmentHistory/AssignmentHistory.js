@@ -13,7 +13,7 @@ function AssignmentHistory(props) {
   const { teacher } = props;
   const { chosenStudent } = props;
   const { httpFunctions } = props;
-  const { assignmentHistory } = props;
+  let { assignmentHistory } = props;
   const { setAssignmentHistory } = props;
 
   const fetchAssignmentHistoryHandler = () => {
@@ -57,6 +57,16 @@ function AssignmentHistory(props) {
       fetchAssignmentHistoryHandler();
     }
   }, [chosenStudent, teacher]);
+
+  if (assignmentHistory && assignmentHistory[0].assignmentCount === undefined) {
+    let iterator = 1;
+    for (let assignment of assignmentHistory) {
+      assignment.assignmentCount = iterator;
+      iterator++;
+    }
+
+    assignmentHistory.reverse();
+  }
 
   return (
     <Fragment>
@@ -109,6 +119,11 @@ function AssignmentHistory(props) {
                       "Done on time"}
                   </div>
                 </div>
+              </div>
+              <div
+                className={`${styles["assignment-count"]} card highlight--light`}
+              >
+                {assignment.assignmentCount}
               </div>
             </div>
           ))}

@@ -98,3 +98,26 @@
     font-size: 1rem;
     text-align: start;
 }
+.lesson-count {
+    display: grid;
+    place-items: center;
+
+    height: 3vh;
+    width: 6vw;
+    
+    background-color: var(--secondary-color);
+    color: #000;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    opacity: 0;
+
+    transition: all ease .4s;
+}
+.lesson:hover .lesson-count {
+    transform: translate(30%, -30%) rotate(20deg);
+
+    opacity: 1;
+}

@@ -36,6 +36,19 @@ function AssignmentHistory(props) {
 
   if (assignmentHistory) {
     assignmentHistory = setAssignmentDateObject(assignmentHistory);
+
+    if (assignmentHistory[0].assignmentCount === undefined) {
+      let iterator = 1;
+      for (let assignment of assignmentHistory) {
+        assignment.assignmentCount = iterator;
+        iterator++;
+      }
+      assignmentHistory.reverse();
+    }
+
+    if (assignmentHistory[0].assignmentCount === 1) {
+      assignmentHistory.reverse();
+    }
   }
 
   return (
@@ -88,6 +101,11 @@ function AssignmentHistory(props) {
                       assignment.assignmentInfo.doneOnTime &&
                       "Done on time"}
                   </div>
+                </div>
+                <div
+                  className={`${styles["assignment-count"]} card highlight--light`}
+                >
+                  {assignment.assignmentCount}
                 </div>
               </div>
             </div>
