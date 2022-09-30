@@ -1,6 +1,10 @@
 import React, { Fragment } from "react";
 import Head from "next/head";
 
+import FullCalendar from "@fullcalendar/react";
+import interactionPlugin from "@fullcalendar/interaction";
+import timeGridPlugin from "@fullcalendar/timegrid";
+
 import Home from "../components/home/Home";
 
 function MainPage() {
