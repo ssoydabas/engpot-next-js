@@ -22,14 +22,8 @@ function AddLesson(props) {
 
   let lessonInformation;
   if (addLesson) {
-    const toLocalISOString = (date) => {
-      const timeOffset = new Date().getTimezoneOffset() * 60000;
-      const localISOTime = new Date(date - timeOffset).toISOString();
-      return localISOTime;
-    };
-
-    const start = convertIsoToObject(toLocalISOString(addLesson.start));
-    const end = convertIsoToObject(toLocalISOString(addLesson.end));
+    const start = convertIsoToObject(addLesson.start.toISOString());
+    const end = convertIsoToObject(addLesson.end.toISOString());
     lessonInformation = { start, end };
   }
 

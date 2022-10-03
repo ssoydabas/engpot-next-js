@@ -11,6 +11,8 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import AddLesson from "./addLesson/AddLesson";
 import RemoveLesson from "./removeLesson/RemoveLesson";
 
+import toLocalISOString from "../../../util/dataHelpers/toLocalISOString.js";
+
 function Schedule(props) {
   const dispatch = useDispatch();
 
@@ -75,7 +77,6 @@ function Schedule(props) {
   return (
     <div className={styles["schedule"]}>
       <FullCalendar
-        timeZone="local"
         plugins={[timeGridPlugin, interactionPlugin]}
         eventStartEditable={true}
         selectable
