@@ -47,8 +47,11 @@ function TeacherSchedule() {
   });
 
   const fetchTeacherSchedule = (teacherId) => {
+    const url = new URL(`${process.env.API_URL}/publicSchedule/fetch`);
+    url.searchParams.append("userId", teacherId);
+
     const requestConfig = {
-      url: `${process.env.API_URL}/scheduleByTeacherId/${teacherId}`,
+      url,
       headers: {
         "content-type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("authenticationToken")}`,
@@ -56,8 +59,8 @@ function TeacherSchedule() {
     };
     const dataProcessingLogic = (data) => {
       setIsLoading(false);
-      const { schedule } = data;
-      setTeacherSchedule(schedule);
+      const { publicSchedule } = data;
+      setTeacherSchedule(publicSchedule);
     };
 
     sendRequest(requestConfig, dataProcessingLogic);
@@ -71,15 +74,8 @@ function TeacherSchedule() {
 
   const closeErrorMessageHandler = () => {
     setHttpError(false);
+    fetchTeacherSchedule(teacher._id);
   };
-
-  const scheduledLessons = [
-    { id: "1", title: "cansu", start: "2022-09-27T12:00:00.000+00:00" },
-    { id: "2", title: "volkan", start: "2022-09-28T13:00:00.000+00:00" },
-    { id: "3", title: "mete", start: "2022-09-29T14:00:00.000+00:00" },
-    { id: "4", title: "dilara", start: "2022-09-27T10:00:00.000+00:00" },
-    { id: "5", title: "mert", start: "2022-10-01T14:00:00.000+00:00" },
-  ];
 
   return (
     <Fragment>
@@ -89,7 +85,8 @@ function TeacherSchedule() {
       {isLoading && <LoadingSpinner />}
       <Schedule
         teacher={teacher}
-        teacherSchedule={scheduledLessons}
+        setTeacher={setTeacher}
+        teacherSchedule={teacherSchedule}
         httpFunctions={httpFunctions}
       />
     </Fragment>
