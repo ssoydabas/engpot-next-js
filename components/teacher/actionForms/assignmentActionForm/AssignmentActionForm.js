@@ -23,12 +23,24 @@ function LessonForm(props) {
   const onSubmitHandler = (e) => {
     e.preventDefault();
 
+    const deadlineDate = deadlineRef.current.value
+    
+    let timestamp;
+    if (deadlineDate) {
+      timestamp = new Date(
+        deadlineDate.split("-")[0],
+        deadlineDate.split("-")[1] - 1,
+        deadlineDate.split("-")[2],
+      );
+    }
+
     const data = {
       teacherId: teacher._id,
       studentId: chosenStudent._id,
       assignmentTitle: titleRef.current.value,
       assignmentInstructions: instructionsRef.current.value,
       assignmentDeadline: deadlineRef.current.value,
+      timestamp
     };
 
     const requestConfig = {

@@ -44,18 +44,33 @@ function LessonForm(props) {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
+    const date = dateRef.current.value;
+    const time = timeRef.current.value;
+
+    let timestamp;
+    if (date && time) {
+      timestamp = new Date(
+        date.split("-")[0],
+        date.split("-")[1] - 1,
+        date.split("-")[2],
+        time.split(":")[0],
+        time.split(":")[1]
+      );
+    }
 
     const data = {
       studentId: chosenStudent._id,
       teacherId: teacher._id,
-      date: dateRef.current.value,
-      time: timeRef.current.value,
+      date,
+      time,
+      timestamp,
       social: socialRef.current.value,
       tense: tenseRef.current.value,
       structure: structureRef.current.value,
       extra: extraRef.current.value,
       status: hasPlannedLesson ? statusRef.current.value : "",
     };
+
     const requestConfig = {
       url: `${process.env.API_URL}/${
         hasPlannedLesson ? "concludeLesson" : "planLesson"

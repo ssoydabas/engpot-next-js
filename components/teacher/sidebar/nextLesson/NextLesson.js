@@ -5,7 +5,7 @@ import convertIsoToObject from "../../../../util/dataHelpers/convertTimestamp";
 
 function NextLesson(props) {
   let { chosenStudent } = props;
-
+  
   if (
     chosenStudent &&
     chosenStudent.engPotInfo.nextLesson.hasPlannedLesson &&
