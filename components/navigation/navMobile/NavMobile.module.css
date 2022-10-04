@@ -1,0 +1,19 @@
+.mobile-menu-button {
+
+    height: 60%;
+
+    margin-right: 10%;
+    border: none;
+    border-bottom: 1px solid var(--secondary-color);
+
+    background-color: var(--primary-color);
+    color: #fffe;
+
+    font-size: .8rem;
+    letter-spacing: .1rem;
+    
+    position: absolute;
+    right: 0;
+
+    z-index: 20;
+}
