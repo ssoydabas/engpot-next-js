@@ -80,7 +80,7 @@ function AddLesson(props) {
         </div>
         <div className={styles["input-div"]}>
           <label htmlFor="">Student Name:</label>
-          <input type={"text"} ref={studentRef} />
+          <input type={"text"} ref={studentRef} autoFocus={true} />
         </div>
         <Button type="submit" classes="button--white" text="Plan" />
       </form>
