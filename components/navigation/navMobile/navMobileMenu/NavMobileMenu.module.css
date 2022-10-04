@@ -12,12 +12,13 @@
   color: #fffe;
 
   position: fixed;
-  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
 
   z-index: 50;
+
+  transition: all ease 0.4s;
 }
 .brand-logo {
   display: grid;
@@ -48,28 +49,28 @@
   font-size: 1.4rem;
 }
 .mobile-menu-button {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 .mobile-menu-button > button {
-    height: 60%;
-    width: 20%;
+  height: 60%;
+  width: 20%;
 
-    border: none;
-    border-bottom: 1px solid var(--secondary-color);
+  border: none;
+  border-bottom: 1px solid var(--secondary-color);
 
-    background-color: var(--primary-color);
-    color: #fffe;
+  background-color: var(--primary-color);
+  color: #fffe;
 
-    font-size: .8rem;
-    letter-spacing: .1rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
 
-    transform: translateX(-20%);
-    
-    z-index: 20;
+  transform: translateX(-20%);
+
+  z-index: 20;
 }
 .sub-links {
   display: grid;
@@ -79,4 +80,11 @@
 
   width: 100%;
   height: 100%;
+}
+
+.top-0 {
+  top: 0%;
+}
+.top-100 {
+  top: 100%;
 }

@@ -121,7 +121,9 @@ main#main::-webkit-scrollbar-thumb {
 
 
 
-
+.no-animation.no-animation {
+  animation: none;
+}
 
 .scroll {
   overflow: scroll;

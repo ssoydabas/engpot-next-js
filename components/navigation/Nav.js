@@ -19,7 +19,7 @@ function Nav() {
 
   useEffect(() => {
     setDeviceScreenMode(windowDimensions, setDevice);
-  }, []);
+  }, [windowDimensions]);
 
   const { authentication } = useSelector((state) => state);
   const { user } = authentication;

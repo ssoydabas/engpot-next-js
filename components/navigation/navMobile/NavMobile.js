@@ -18,7 +18,7 @@ function NavMobile(props) {
         text="MENU"
         onClick={setDisplayMobileMenu.bind(null, true)}
       />
-      {displayMobileMenu && <NavMobileMenu user={user} setDisplayMobileMenu={setDisplayMobileMenu} />}
+      <NavMobileMenu user={user} displayMobileMenu={displayMobileMenu} setDisplayMobileMenu={setDisplayMobileMenu} />
     </Fragment>
   );
 }

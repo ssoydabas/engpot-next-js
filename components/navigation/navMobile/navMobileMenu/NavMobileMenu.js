@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./NavMobileMenu.module.css";
 
 import Link from "next/link";
@@ -35,11 +35,23 @@ const constructNavItems = (user) => {
 
 function NavMobileMenu(props) {
   const { user } = props;
+  const { displayMobileMenu } = props;
   const { setDisplayMobileMenu } = props;
+
   const navigationItems = constructNavItems(user);
 
+  const closeMenuOnNavigate = () => {
+    setTimeout(() => {
+      setDisplayMobileMenu(false);
+    }, 600);
+  };
+
   return (
-    <div className={styles["nav-mobile-menu"]}>
+    <div
+      className={`${styles["nav-mobile-menu"]} ${
+        !displayMobileMenu ? styles["top-100"] : styles["top-0"]
+      }`}
+    >
       <div className={styles["brand-logo"]}>
         <div className={styles["image-wrapper"]}>
           <Image
@@ -54,7 +66,7 @@ function NavMobileMenu(props) {
       <div className={styles["links"]}>
         {navigationItems.map((item) => (
           <Link key={item.id} href={item.href}>
-            <a>{item.text}</a>
+            <a onClick={closeMenuOnNavigate}>{item.text}</a>
           </Link>
         ))}
       </div>
