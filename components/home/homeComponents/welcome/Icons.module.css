@@ -1,22 +1,55 @@
-.icons {
-  display: grid;
-  place-items: center;
-  grid-template-columns: repeat(3, 1fr);
+@media only screen and (min-width: 300px) and (max-width: 480px) {
+  .icons {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2%;
 
-  width: 60%;
+    width: 100%;
 
-  margin: auto;
-}
-.icon-container {
-  display: grid;
-  place-items: center;
-  grid-template-rows: 5fr 1fr;
-}
-.icon-container > svg {
-  padding: 35%;
+    margin: auto;
+  }
+  .icon-container {
+    display: grid;
+    place-items: center;
+    grid-template-rows: 2fr 1fr;
 
-  transform: translateY(30%);
+    height: 80%;
+    width: 30vw;
+
+    filter: drop-shadow(0 0 10px var(--primary-color));
+  }
+  .icon-container > svg {
+    width: 30%;
+    fill: #fff;
+  }
+  .icon-container > label {
+    font-size: 0.8rem;
+    color: #fff;
+  }
 }
-.icon-container > label {
-  font-size: 1.2rem;
+
+@media only screen and (min-width: 1201px) and (max-width: 1980px) {
+  .icons {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
+
+    width: 60%;
+
+    margin: auto;
+  }
+  .icon-container {
+    display: grid;
+    place-items: center;
+    grid-template-rows: 5fr 1fr;
+  }
+  .icon-container > svg {
+    padding: 35%;
+
+    transform: translateY(30%);
+  }
+  .icon-container > label {
+    font-size: 1.2rem;
+  }
 }
