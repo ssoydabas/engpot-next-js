@@ -8,7 +8,7 @@ function NavLogo() {
     <div className={styles["brand-logo"]}>
       <div className={styles["image-wrapper"]}>
         <Image
-          src={"/nav-logo.png"}
+          src={"/nav.png"}
           layout={"fill"}
           objectFit={"contain"}
           alt={"navigation logo"}

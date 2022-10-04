@@ -6,12 +6,12 @@
   width: 100%;
 
   border-radius: 300px;
+
+  transform: scale(.6);
 }
 .image-wrapper {
   width: 100%;
-  height: 160%;
-
-  transform: translateY(24%);
+  height: 100%;
 
   position: relative;
 }
