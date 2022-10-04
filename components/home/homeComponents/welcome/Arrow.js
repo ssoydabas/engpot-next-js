@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./Arrow.module.css";
 
 function Arrow(props) {
+  const { scrollToAboutEngPot } = props;
+  
   return (
     <svg
+      onClick={scrollToAboutEngPot}
       className={styles["downward-arrow"]}
       width="24"
       height="24"

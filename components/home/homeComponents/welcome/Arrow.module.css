@@ -12,6 +12,9 @@
 
   box-shadow: 0 0 2px 2px var(--primary-color);
 
+  user-select: none;
+  cursor: pointer;
+
   animation: downward-arrow infinite 2s;
 }
 

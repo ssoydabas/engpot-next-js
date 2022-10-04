@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./Home.module.css";
 
 import Welcome from "./homeComponents/welcome/Welcome";
@@ -46,12 +46,18 @@ const dummyContentsArray = [
   },
 ];
 function Home() {
+  const aboutEngPotRef = useRef();
+
+  const scrollToAboutEngPot = () => {
+    aboutEngPotRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className={`${styles["home"]} scroll`}>
-      <Welcome />
+      <Welcome scrollToAboutEngPot={scrollToAboutEngPot} />
       <ContactUs />
-      <Contents contentsArray={dummyContentsArray} />
-      <AboutEngPot />
+      {/* <Contents contentsArray={dummyContentsArray} /> */}
+      <AboutEngPot aboutEngPotRef={aboutEngPotRef} />
       <SocialMedia />
     </div>
   );

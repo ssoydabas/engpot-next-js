@@ -1,53 +1,66 @@
 .about-engpot {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+  display: grid;
+  grid-template-rows: 1fr 6fr 1fr;
 
-    width: 100%;
-    height: 80vh;
+  width: 100%;
+  height: 95vh;
 
-    padding: 2% 10%;
+  padding: 2% 10%;
 
-    background-color: var(--primary-color);
-    color: #fffe;
+  background-color: var(--primary-color);
+  color: #fffe;
 }
-.about-engpot > div:first-of-type {
-    grid-column: 1/4;
-    grid-row: 1;
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1%;
 
-    width: 100%;
-    
-    font-size: 2rem;
-    text-align: center;
+  width: 100%;
+  height: 100%;
+
+  font-size: 1.8rem;
 }
-.about-engpot > div:first-of-type > span {
-    font-size: inherit;
-    color: var(--secondary-color);
+.title > span {
+  font-size: inherit;
+  font-weight: var(--bold);
+  text-decoration: underline;
+  color: var(--secondary-color);
 }
-.about-engpot > div:last-of-type {
-    display: grid;
-    place-items: center;
-    grid-template-rows: 1fr 2fr;
+.body {
+  display: block;
 
-    grid-row: 2/4;
-    grid-column: 1/3;
+  padding: 2% 4%;
 
-    font-size: 1.4rem;
+  position: relative;
 }
-.about-engpot > div:last-of-type > div {
-    font-size: inherit;
+.body > * {
+  text-indent: 1rem;
 }
-.about-engpot > div:last-of-type > button {
-    width: 12%;
+.about-engpot > a {
+  display: grid;
+  place-items: center;
 
-    font-size: 1.2rem;
+  width: 100%;
 }
-.about-engpot img {
-    grid-column: 2/4;
-    grid-row: 1/4;
+.about-engpot > a > button {
+  padding: 0.5% 4%;
+}
 
-    width: 100%;
-    height: 100%;
+.language-toggler {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 4%;
 
-    border: 1px solid red;
+  width: 10%;
+
+  margin: 2% 4%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.language-toggler > button {
+  width: 100%;
+  height: 100%;
 }

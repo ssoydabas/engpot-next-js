@@ -6,11 +6,13 @@ import Icons from "./Icons";
 import Arrow from "./Arrow";
 
 function Welcome(props) {
+  const { scrollToAboutEngPot } = props;
+
   return (
     <div className={styles["welcome"]}>
       <HomeBanner />
       <Icons />
-      <Arrow />
+      <Arrow scrollToAboutEngPot={scrollToAboutEngPot} />
     </div>
   );
 }
