@@ -9,6 +9,11 @@ function MainPage() {
       <Head>
         <title>EngPot English</title>
         <meta
+          name="viewport"
+          content="initial-scale=1, maximum-scale=1"
+          shrink-to-fit="no"
+        />
+        <meta
           name="description"
           content="An extensive platform designed for English Learners as well as English Teachers."
         />
