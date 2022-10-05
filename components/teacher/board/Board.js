@@ -13,6 +13,7 @@ function Board(props) {
   const { teacher } = props;
   const { httpFunctions } = props;
   const { chosenStudent } = props;
+  const { device } = props;
 
   const toggleHistoryModeHandler = () => {
     let target = historyMode === "lesson" ? "assignment" : "lesson";
@@ -44,6 +45,7 @@ function Board(props) {
           setHistoryMode={setHistoryMode}
           assignmentHistory={assignmentHistory}
           setAssignmentHistory={setAssignmentHistory}
+          device={device}
         />
       )}
     </div>

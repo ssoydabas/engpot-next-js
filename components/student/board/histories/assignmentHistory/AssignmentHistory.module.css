@@ -91,6 +91,8 @@
 
     font-size: 0.8rem;
     text-align: start;
+
+    word-break: break-all;
   }
   .assignment-count {
     display: none;

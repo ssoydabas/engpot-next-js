@@ -62,7 +62,9 @@ function LessonHistory(props) {
           lessonHistory.map((lesson) => (
             <div
               key={lesson._id}
-              className={`${styles["lesson"]} card highlight--dark`}
+              className={`${styles["lesson"]} card highlight--dark ${
+                lessonHistory.length === 1 ? styles["only-one"] : ""
+              }`}
             >
               <div className={`${styles["date"]} card highlight--dark`}>
                 <div className={styles["month"]}>

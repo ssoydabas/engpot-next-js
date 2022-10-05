@@ -1,4 +1,65 @@
-.form {
+@media only screen and (min-width: 300px) and (max-width: 480px) {
+  .form {
+    display: grid;
+    place-items: center;
+    grid-template-rows: repeat(6, 1fr);
+
+    width: 90%;
+    height: 90%;
+
+    margin: auto;
+
+    background-color: var(--primary-color);
+    color: #fffe;
+
+    position: absolute;
+    top: -4%;
+    right: 0;
+    bottom: 0%;
+    left: 0;
+
+    z-index: 30;
+  }
+  .title {
+    font-size: 1rem;
+    font-weight: var(--bold);
+
+    word-break: break-word;
+  }
+  .input-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+
+    width: 90%;
+  }
+  .input-container > label {
+    font-size: 0.8rem;
+  }
+  .input-container > div {
+    padding: 0 4%;
+    border: 1px solid #fff;
+    border-radius: 6px;
+
+    background-color: var(--primary-color);
+    color: #fffe;
+
+    font-size: 0.8rem;
+    text-align: center;
+
+    word-break: break-word;
+  }
+  .form > button {
+    grid-row: 5/7;
+
+    font-size: 0.8rem;
+
+    margin-bottom: 12%;
+    padding: 0.8% 6%;
+  }
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1980px) {
+  .form {
     display: grid;
     place-items: center;
     grid-template-rows: repeat(6, 1fr);
@@ -18,23 +79,23 @@
     left: 0;
 
     z-index: 10;
-}
-.title {
+  }
+  .title {
     font-size: 1.2rem;
     font-weight: var(--bold);
 
     transform: translateY(30%);
-}
-.input-container {
+  }
+  .input-container {
     display: grid;
     grid-template-rows: 1fr 1fr;
 
     width: 60%;
-}
-.input-container > label {
+  }
+  .input-container > label {
     font-size: 1.2rem;
-}
-.input-container > div {
+  }
+  .input-container > div {
     padding: 0 4%;
     border: 1px solid #fff;
     border-radius: 6px;
@@ -44,10 +105,11 @@
 
     font-size: 1.2rem;
     text-align: center;
-}
-.form > button  {
+  }
+  .form > button {
     grid-row: 5/7;
 
     margin-bottom: 2%;
-    padding: .8% 6%;
+    padding: 0.8% 6%;
+  }
 }

@@ -33,7 +33,7 @@ function AssignmentHistory(props) {
   const { httpFunctions } = props;
   const { fetchAssignmentHistory } = props;
   let { assignmentHistory } = props;
-  let { device } = props;
+  const { device } = props;
 
   if (assignmentHistory) {
     assignmentHistory = setAssignmentDateObject(assignmentHistory);

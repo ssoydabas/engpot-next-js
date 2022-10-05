@@ -1,18 +1,45 @@
-.extra {
-  display: grid;
-  place-items: center;
+@media only screen and (min-width: 300px) and (max-width: 480px) {
+  .extra {
+    display: none;
+    place-items: center;
 
-  width: 100%;
-  height: 100%;
+    width: 20vh;
+    height: 20vh;
 
-  padding: 20% 0;
+    background-color: var(--primary-color);
+    color: #fffe;
 
-  background-color: var(--primary-color);
-  color: #fffe;
+    transform: scale(0.8);
+    z-index: 20;
+  }
+  .extra > button {
+    font-size: 0.6rem;
+
+    width: 80%;
+    height: 80%;
+
+    border-radius: 50%;
+  }
 }
-.extra > button {
-  width: 12vh;
-  height: 12vh;
 
-  border-radius: 50%;
+@media only screen and (min-width: 1201px) and (max-width: 1980px) {
+  .extra {
+    display: grid;
+    place-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 20% 0;
+
+    background-color: var(--primary-color);
+    color: #fffe;
+    z-index: 20;
+  }
+  .extra > button {
+    width: 12vh;
+    height: 12vh;
+
+    border-radius: 50%;
+  }
 }

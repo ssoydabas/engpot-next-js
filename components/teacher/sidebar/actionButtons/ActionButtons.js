@@ -4,14 +4,15 @@ import styles from "./ActionButtons.module.css";
 import Button from "../../../ui/components/button/Button";
 
 function ActionButtons(props) {
-
   const { chosenStudent } = props;
   const { setDisplayActionForm } = props;
   const { setActionFormMode } = props;
+  const { setDisplayMobileSidebar } = props;
 
   const setTeacherActionForm = (mode) => {
     setDisplayActionForm(true);
     setActionFormMode(mode);
+    setDisplayMobileSidebar(false);
   };
 
   return (

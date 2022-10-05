@@ -1,8 +1,58 @@
-.container {
+@media only screen and (min-width: 300px) and (max-width: 480px) {
+  .container {
     display: grid;
     place-items: center;
     grid-template-rows: 1fr 1fr;
-    
+
+    width: 100%;
+    height: 100%;
+
+    margin: auto;
+    padding: 1% 10%;
+    border-color: var(--silver-color);
+
+    background-color: var(--primary-color);
+    color: #fffe;
+  }
+  .title {
+    display: grid;
+    place-items: center;
+    grid-template-rows: 1fr 1fr;
+
+    width: 100%;
+    height: 100%;
+  }
+  .title > span {
+    width: 100%;
+    text-align: center;
+    text-transform: capitalize;
+  }
+  .title > span:last-of-type {
+    border-bottom: 1px solid #fffe;
+  }
+  .container > select {
+    width: 100%;
+    height: 40%;
+
+    font-size: 0.8rem;
+
+    transition: all ease 0.4s;
+  }
+  .container > select > option {
+    text-align: center;
+  }
+  .container > button {
+    padding: 1% 12%;
+    border: 1px solid red;
+  }
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1980px) {
+  .container {
+    display: grid;
+    place-items: center;
+    grid-template-rows: 1fr 1fr;
+
     width: 100%;
     height: 100%;
 
@@ -11,35 +61,36 @@
 
     background-color: var(--primary-color);
     color: #fffe;
-}
-.title {
+  }
+  .title {
     display: grid;
     place-items: center;
     grid-template-rows: 1fr 1fr;
 
     width: 100%;
     height: 100%;
-}
-.title > span {
+  }
+  .title > span {
     width: 100%;
     text-align: center;
     text-transform: capitalize;
     border-bottom: 1px solid #fffe;
-}
-.container > select {
+  }
+  .container > select {
     width: 100%;
     height: 40%;
 
-    font-size: .6rem;
+    font-size: 0.6rem;
 
-    transition: all ease .4s;
-}
-.container > select:hover {
+    transition: all ease 0.4s;
+  }
+  .container > select:hover {
     transform: translateX(-40%) scale(2.2);
-}
-.container > select > option {
+  }
+  .container > select > option {
     text-align: center;
-}
-.container > button {
+  }
+  .container > button {
     padding: 1% 12%;
+  }
 }

@@ -47,7 +47,7 @@ function ShowDetails(props) {
           </div>
           <div className={styles["note"]}>
             <label htmlFor="">Teacher Note</label>
-            <div>{assignment.teacherInfo.teacherNote}</div>
+            <div className="scroll">{assignment.teacherInfo.teacherNote}</div>
           </div>
         </div>
       )}
