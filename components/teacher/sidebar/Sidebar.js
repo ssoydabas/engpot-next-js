@@ -22,7 +22,7 @@ function Sidebar(props) {
           !displayMobileSidebar ? styles["top-100"] : styles["top-0"]
         }`}
       >
-        <Select students={students} setChosenStudent={setChosenStudent} />
+        <Select students={students} setChosenStudent={setChosenStudent} setDisplayMobileSidebar={setDisplayMobileSidebar} />
         {chosenStudent && <NextLesson chosenStudent={chosenStudent} />}
         {chosenStudent && <Extra />}
         {chosenStudent && (

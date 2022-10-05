@@ -6,6 +6,7 @@ function Select(props) {
 
   const { students } = props;
   const { setChosenStudent } = props;
+  const { setDisplayMobileSidebar } = props;
 
   const onChoose = () => {
     const studentId =
@@ -14,6 +15,7 @@ function Select(props) {
       (student) => student._id === studentId
     );
     setChosenStudent(filteredStudent);
+    setDisplayMobileSidebar(false);
   };
 
   return (

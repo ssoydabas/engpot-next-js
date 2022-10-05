@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from "react";
-import styles from "../../styles/AuthenticationForm.module.css";
 
 import { useSelector, useDispatch } from "react-redux";
 import { authenticationActions } from "../../../../store/authentication/authentication";

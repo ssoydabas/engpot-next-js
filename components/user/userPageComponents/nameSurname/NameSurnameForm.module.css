@@ -1,4 +1,73 @@
-.form {
+@media only screen and (min-width: 300px) and (max-width: 480px) {
+  .form {
+    display: grid;
+    place-items: center;
+
+    width: 90%;
+    height: 60vh;
+
+    margin: auto;
+
+    border: 1px solid #fffe;
+    border-radius: 8px;
+
+    background-color: var(--primary-color);
+    color: #fffe;
+
+    box-shadow: 0 0 2px 1px #fffe;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: 20;
+  }
+  .form > div:first-of-type {
+    font-size: 1rem;
+  }
+  .form > div:last-of-type {
+    display: grid;
+    place-items: center;
+
+    width: 100%;
+    height: 100%;
+  }
+  .form > div:last-of-type > div {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+
+    width: 80%;
+    height: 100%;
+  }
+  .form > div:last-of-type > div > label {
+    font-size: 1rem;
+    transform: translateY(40%);
+  }
+  .form > div:last-of-type > div > input {
+    border-radius: 8px;
+  }
+  .form > div:last-of-type > div > input[type] {
+    display: grid;
+    place-items: center;
+
+    padding: 1% 10%;
+    border: 1px solid #fff;
+
+    background-color: var(--primary-color);
+    color: #fffe;
+
+    transform: translateY(40%);
+  }
+  .form > button {
+    padding: 1% 8%;
+    font-size: .8rem;
+  }
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1980px) {
+  .form {
     display: grid;
     place-items: center;
 
@@ -19,35 +88,35 @@
     top: 0;
     right: 0;
     bottom: 0;
-    left: 0;    
+    left: 0;
 
     z-index: 20;
-}
-.form > div:first-of-type {
+  }
+  .form > div:first-of-type {
     font-size: 1.4rem;
-}
-.form > div:last-of-type {
+  }
+  .form > div:last-of-type {
     display: grid;
     place-items: center;
 
     width: 100%;
     height: 100%;
-}
-.form > div:last-of-type > div {
+  }
+  .form > div:last-of-type > div {
     display: grid;
     grid-template-rows: repeat(4, 1fr);
 
     width: 80%;
     height: 100%;
-}
-.form > div:last-of-type > div > label {
+  }
+  .form > div:last-of-type > div > label {
     font-size: 1.2rem;
     transform: translateY(40%);
-}
-.form > div:last-of-type > div > input {
+  }
+  .form > div:last-of-type > div > input {
     border-radius: 8px;
-}
-.form > div:last-of-type > div > input[type] {
+  }
+  .form > div:last-of-type > div > input[type] {
     display: grid;
     place-items: center;
 
@@ -58,9 +127,10 @@
     color: #fffe;
 
     transform: translateY(40%);
-}
-.form > button {
+  }
+  .form > button {
     padding: 1% 4%;
 
     transform: translateY(-80%);
+  }
 }

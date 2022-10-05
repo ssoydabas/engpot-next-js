@@ -1,8 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styles from "./NavMobileMenu.module.css";
 
 import Link from "next/link";
 import Image from "next/image";
+
+import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import { authenticationActions } from "../../../../store/authentication/authentication";
 
 import Button from "../../../ui/components/button/Button";
 
@@ -34,6 +38,9 @@ const constructNavItems = (user) => {
 };
 
 function NavMobileMenu(props) {
+  const dispatch = useDispatch();
+  const router = useRouter();
+
   const { user } = props;
   const { displayMobileMenu } = props;
   const { setDisplayMobileMenu } = props;
@@ -44,6 +51,14 @@ function NavMobileMenu(props) {
     setTimeout(() => {
       setDisplayMobileMenu(false);
     }, 600);
+  };
+
+  const logoutHandler = () => {
+    router.replace("/");
+    setTimeout(() => {
+      dispatch(authenticationActions.terminateAuthenticationToken());
+    }, 500);
+    setDisplayMobileMenu(false);
   };
 
   return (
@@ -71,7 +86,9 @@ function NavMobileMenu(props) {
         ))}
       </div>
 
-      <div className={styles["mobile-menu-button"]}>
+      <div className={styles["mobile-menu-buttons"]}>
+        <Button type="button" text="LOGOUT" onClick={logoutHandler} />
+
         <Button
           type="button"
           text="MENU"

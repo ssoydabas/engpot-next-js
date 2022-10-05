@@ -31,7 +31,7 @@ function UserProfileById() {
         <title>User Profile</title>
         <meta name="description" content="Manage your profile." />
       </Head>
-      <User user={authentication.user} router={router} dispatch={dispatch} />;
+      <User user={authentication.user} router={router} dispatch={dispatch} />
     </Fragment>
   );
 }

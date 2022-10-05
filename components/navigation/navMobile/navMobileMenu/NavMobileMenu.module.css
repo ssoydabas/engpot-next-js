@@ -48,14 +48,15 @@
 .links > a {
   font-size: 1.4rem;
 }
-.mobile-menu-button {
+.mobile-menu-buttons {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 
-  width: 100%;
+  width: 80%;
   height: 100%;
+
 }
-.mobile-menu-button > button {
+.mobile-menu-buttons > button {
   height: 60%;
   width: 20%;
 
@@ -67,8 +68,6 @@
 
   font-size: 0.8rem;
   letter-spacing: 0.1rem;
-
-  transform: translateX(-20%);
 
   z-index: 20;
 }
