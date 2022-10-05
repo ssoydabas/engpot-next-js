@@ -1,21 +1,61 @@
-.contact-us {
+@media only screen and (min-width: 300px) and (max-width: 480px) {
+  .contact-us {
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    place-items: center;
+
+    width: 100%;
+    height: 20vh;
+
+    padding: 0% 10%;
+
+    background-color: var(--secondary-color);
+
+    box-shadow: 0 0 20px 8px var(--primary-color);
+  }
+  .title {
+    font-size: 1rem;
+    font-weight: var(--bold);
+  }
+  .contact-form {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 4%;
+
+    width: 100%;
+  }
+  .contact-form > input {
+    width: 100%;
+    text-align: center;
+
+    transform: translateY(-30%);
+  }
+  .contact-form > button {
+    width: 40%;
+
+    margin: auto;
+  }
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1980px) {
+  .contact-us {
     display: grid;
     grid-template-columns: 2fr 2fr;
     place-items: center;
 
     width: 100%;
 
-    padding: .6% 10%;
+    padding: 0.6% 10%;
 
     background-color: var(--secondary-color);
 
     box-shadow: 0 0 20px 8px var(--primary-color);
-}
-.contact-us > div:first-of-type {
+  }
+  .contact-us > div:first-of-type {
     font-size: 1.2rem;
     font-weight: var(--bold);
-}
-.contact-us > div:last-of-type {
+  }
+  .contact-us > div:last-of-type {
     display: grid;
     grid-template-columns: 4fr 4fr;
     gap: 2%;
@@ -23,13 +63,14 @@
     width: 100%;
 
     margin-right: 20%;
-}
-.contact-us > div:last-of-type > input {
+  }
+  .contact-us > div:last-of-type > input {
     place-self: start;
 
     width: 100%;
     text-align: center;
-}
-.contact-us > div:last-of-type > button {
+  }
+  .contact-us > div:last-of-type > button {
     width: 40%;
+  }
 }

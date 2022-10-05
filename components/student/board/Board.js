@@ -13,6 +13,7 @@ function Board(props) {
   const { assignmentHistory } = props;
   const { fetchAssignmentHistory } = props;
   const { httpFunctions } = props;
+  const { device } = props;
 
   const toggleHistoryModeHandler = () => {
     let target = historyMode === "lesson" ? "assignment" : "lesson";
@@ -39,6 +40,7 @@ function Board(props) {
           assignmentHistory={assignmentHistory}
           fetchAssignmentHistory={fetchAssignmentHistory}
           httpFunctions={httpFunctions}
+          device={device}
         />
       )}
     </div>

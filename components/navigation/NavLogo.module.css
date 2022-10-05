@@ -8,6 +8,8 @@
   border-radius: 300px;
 
   transform: scale(.6);
+
+  z-index: 40;
 }
 .image-wrapper {
   width: 100%;

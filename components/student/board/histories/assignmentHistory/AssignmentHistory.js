@@ -33,6 +33,7 @@ function AssignmentHistory(props) {
   const { httpFunctions } = props;
   const { fetchAssignmentHistory } = props;
   let { assignmentHistory } = props;
+  let { device } = props;
 
   if (assignmentHistory) {
     assignmentHistory = setAssignmentDateObject(assignmentHistory);
@@ -58,9 +59,14 @@ function AssignmentHistory(props) {
           assignmentHistory.map((assignment) => (
             <div
               key={assignment._id}
-              className={`${styles["assignment"]} card highlight--dark`}
+              className={`${styles["assignment"]} card highlight--dark ${
+                assignmentHistory.length === 1 ? styles["only-one"] : ""
+              }`}
               onClick={setAssignmentDetails.bind(null, assignment)}
             >
+              {device === "mobile" && (
+                <div className={`${styles["click-me"]}`}>Click Me!</div>
+              )}
               <div className={`${styles["date"]} card highlight--dark`}>
                 <div className={styles["month"]}>
                   {assignment.assignmentInfo.assignedDateObject.monthName}

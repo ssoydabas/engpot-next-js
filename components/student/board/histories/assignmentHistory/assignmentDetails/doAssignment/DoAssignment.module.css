@@ -24,10 +24,10 @@
     display: grid;
     grid-template-rows: 1fr 1fr;
 
-    width: 80%;
+    width: 100%;
 }
 .input-container > label {
-    font-size: 1.2rem;
+    font-size: 1rem;
     transform: translateY(-50%);
     color: var(--secondary-color);
 }
@@ -39,7 +39,7 @@
     background-color: var(--primary-color);
     color: #fffe;
 
-    font-size: 1.2rem;
+    font-size: .8rem;
     text-align: center;
 }
 .textarea {
@@ -58,16 +58,18 @@
     width: 80%;
     height: 100%;
 
-    padding: 0 4%;
+    padding: 2% 4%;
     border: 1px solid #fff;
     border-radius: 6px;
 
     background-color: var(--primary-color);
     color: #fffe;
 
-    font-size: 1.2rem;
+    font-size: .8rem;
 }
 .do-assignment > button {
+    font-size: .8rem;
+
     margin-bottom: 2%;
     padding: .8% 6%;
 }

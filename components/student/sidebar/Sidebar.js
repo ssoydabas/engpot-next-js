@@ -5,6 +5,7 @@ import convertTimestamp from "../../../util/dataHelpers/convertTimestamp";
 
 function Sidebar(props) {
   const { student } = props;
+  const { displayMobileSidebar } = props;
 
   if (student && student.engPotInfo.nextLesson.hasPlannedLesson) {
     const dateObject = convertTimestamp(student.engPotInfo.nextLesson.date);
@@ -15,7 +16,11 @@ function Sidebar(props) {
   return (
     <Fragment>
       {student && (
-        <div className={styles["side-bar"]}>
+        <div
+          className={`${styles["side-bar"]} ${
+            !displayMobileSidebar ? styles["top-100"] : styles["top-0"]
+          }`}
+        >
           <div
             className={`${styles["name-surname"]} card highlight--dark`}
           >{`${student.personalInfo.name} ${student.personalInfo.surname}`}</div>
