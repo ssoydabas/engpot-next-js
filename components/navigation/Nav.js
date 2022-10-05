@@ -23,7 +23,6 @@ function Nav() {
 
   const { authentication } = useSelector((state) => state);
   const { user } = authentication;
-  console.log(user);
 
   return (
     <div className={styles["nav"]}>

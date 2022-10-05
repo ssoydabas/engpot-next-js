@@ -87,8 +87,8 @@ function NavMobileMenu(props) {
       </div>
 
       <div className={styles["mobile-menu-buttons"]}>
-        <Button type="button" text="LOGOUT" onClick={logoutHandler} />
-
+        {user && <Button type="button" text="LOGOUT" onClick={logoutHandler} />}
+        {!user && <div className="invisible"></div>}
         <Button
           type="button"
           text="MENU"
