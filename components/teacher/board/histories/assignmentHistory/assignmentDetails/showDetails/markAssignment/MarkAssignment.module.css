@@ -104,7 +104,7 @@
     grid-template-rows: 4fr 4fr;
 
     width: 140%;
-    height: 84vh;
+    height: calc(var(--vh, 1vh) * 84);
 
     padding: 2% 6%;
 

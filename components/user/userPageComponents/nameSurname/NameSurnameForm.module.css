@@ -4,7 +4,7 @@
     place-items: center;
 
     width: 90%;
-    height: 60vh;
+    height: calc(var(--vh, 1vh) * 60);
 
     margin: auto;
 
@@ -72,7 +72,7 @@
     place-items: center;
 
     width: 40%;
-    height: 60vh;
+    height: calc(var(--vh, 1vh) * 60);
 
     margin: auto;
 

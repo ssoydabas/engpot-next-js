@@ -15,8 +15,8 @@
     display: grid;
     place-items: center;
 
-    width: 5vh;
-    height: 5vh;
+    width: calc(var(--vh, 1vh) * 5);
+    height: calc(var(--vh, 1vh) * 5);
 
     margin: 4%;
     border: 4px solid var(--secondary-color);
@@ -27,7 +27,7 @@
     color: #fff;
 
     position: fixed;
-    bottom: 5vh;
+    bottom: calc(var(--vh, 1vh) * 5);
     right: 0;
 
     z-index: 20;

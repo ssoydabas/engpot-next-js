@@ -34,8 +34,8 @@
     display: grid;
     place-items: center;
 
-    width: 8vh;
-    height: 8vh;
+    width: calc(var(--vh, 1vh) * 8);
+    height: calc(var(--vh, 1vh) * 8);
 
     margin: 1%;
     border: 6px solid var(--secondary-color);

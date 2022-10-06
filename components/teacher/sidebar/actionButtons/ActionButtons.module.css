@@ -16,8 +16,8 @@
     color: #fffe;
   }
   .teacher-action-buttons > button {
-    width: 14vh;
-    height: 14vh;
+    width: calc(var(--vh, 1vh) * 14);
+    height: calc(var(--vh, 1vh) * 14);
 
     border-radius: 50%;
   }
@@ -45,8 +45,8 @@
     color: #fffe;
   }
   .teacher-action-buttons > button {
-    width: 12vh;
-    height: 12vh;
+    width: calc(var(--vh, 1vh) * 12);
+    height: calc(var(--vh, 1vh) * 12);
 
     border-radius: 50%;
   }

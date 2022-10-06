@@ -3,8 +3,8 @@
     display: none;
     place-items: center;
 
-    width: 20vh;
-    height: 20vh;
+    width: calc(var(--vh, 1vh) * 20);
+    height: calc(var(--vh, 1vh) * 20);
 
     background-color: var(--primary-color);
     color: #fffe;
@@ -37,8 +37,8 @@
     z-index: 20;
   }
   .extra > button {
-    width: 12vh;
-    height: 12vh;
+    width: calc(var(--vh, 1vh) * 12);
+    height: calc(var(--vh, 1vh) * 12);
 
     border-radius: 50%;
   }

@@ -4,7 +4,7 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
 
-  height: 40vh;
+  height: calc(var(--vh, 1vh) * 40);
   width: 40vw;
 
   background-color: var(--primary-color);

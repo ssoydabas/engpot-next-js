@@ -72,7 +72,7 @@
     word-break: break-all;
   }
   .student-answer-text {
-    height: 70vh;
+    height: calc(var(--vh, 1vh) * 70);
 
     padding: 1%;
 
@@ -126,7 +126,7 @@
     font-size: 0.8rem;
   }
   .note > div {
-    height: 60vh;
+    height: calc(var(--vh, 1vh) * 60);
 
     padding: 2% 4%;
 
