@@ -13,7 +13,6 @@
     border-left: 2px solid var(--primary-color);
 
     background-color: #0009;
-    box-shadow: 0 0 60px 40px var(--primary-color);
 
     position: fixed;
     right: 0;
