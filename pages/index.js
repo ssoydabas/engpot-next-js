@@ -1,9 +1,13 @@
 import React, { Fragment } from "react";
 import Head from "next/head";
 
+import useDeviceViewportHeight from "../hooks/useDeviceViewportHeight";
+
 import Home from "../components/home/Home";
 
 function MainPage() {
+  useDeviceViewportHeight();
+
   return (
     <Fragment>
       <Head>

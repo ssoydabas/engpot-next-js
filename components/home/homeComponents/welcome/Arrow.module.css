@@ -3,8 +3,8 @@
     display: grid;
     place-items: center;
 
-    height: 6vh;
-    width: 6vh;
+    height: calc(var(--vh, 1vh) * 6);
+    width: calc(var(--vh, 1vh) * 6);
 
     margin: auto;
 
@@ -42,8 +42,8 @@
     display: grid;
     place-items: center;
 
-    height: 4vh;
-    width: 4vh;
+    height: calc(var(--vh, 1vh) * 4);
+    width: calc(var(--vh, 1vh) * 4);
 
     margin: auto;
 

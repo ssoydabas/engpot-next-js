@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import styles from "./Home.module.css";
 
 import Welcome from "./homeComponents/welcome/Welcome";
 import ContactUs from "./homeComponents/contactUs/ContactUs";
@@ -53,7 +52,7 @@ function Home() {
   };
 
   return (
-    <div className={`${styles["home"]} scroll`}>
+    <div className={`scroll`}>
       <Welcome scrollToAboutEngPot={scrollToAboutEngPot} />
       <ContactUs />
       {/* <Contents contentsArray={dummyContentsArray} /> */}

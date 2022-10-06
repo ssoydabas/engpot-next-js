@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
 /* * font-family: 'Poppins', sans-serif; */
 
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 /* * font-family: 'Lato', sans-serif; */
 
 * {
@@ -9,7 +9,7 @@
   padding: 0;
 
   font-size: 16px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
 
@@ -18,25 +18,25 @@ a {
   color: #fff;
 }
 
-
 :root {
   --primary-color: #1d1d1d;
   --transparent-primary-color: #1d1d1de9;
-  --secondary-color: #FAED26;
-  --transparent-secondary-color: #FAED26e9;
+  --secondary-color: #faed26;
+  --transparent-secondary-color: #faed26e9;
   --silver-color: #d0d0d0;
 
   --bold: 900;
   --normal: 700;
   --light: 400;
 
-  --transition-speed: .5s;
-  --transition-speed-responsive-mobile-menu: 1s
+  --transition-speed: 0.5s;
+  --transition-speed-responsive-mobile-menu: 1s;
 }
 
 body {
   width: 100vw;
   height: 100vh;
+  height: calc(var(--vh) * 100);
 
   overflow: hidden;
 }
@@ -48,9 +48,9 @@ li {
 main#main {
   display: block;
   width: 100vw;
-  height: 95vh;
+  height: calc(var(--vh, 1vh) * 95);
 
-  margin-bottom: 5vh;
+  margin-bottom: calc(var(--vh, 1vh) * 5);
 }
 
 main#main {
@@ -69,7 +69,7 @@ main#main::-webkit-scrollbar-thumb {
 }
 
 .darkened-image {
-  filter: brightness(.6);
+  filter: brightness(0.6);
 }
 .invisible {
   visibility: hidden;
@@ -117,9 +117,6 @@ main#main::-webkit-scrollbar-thumb {
   box-shadow: 0 0 2px 4px var(--primary-color);
   border-color: var(--silver-color);
 }
-
-
-
 
 .no-animation.no-animation {
   animation: none;

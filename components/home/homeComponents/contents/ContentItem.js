@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./ContentItem.module.css";
 
 import Button from "../../../ui/components/button/Button";
 
