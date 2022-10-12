@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "./ExternalLinks.module.css";
 
+import Link from "next/link";
+
 function ExternalLinks() {
   const [showExternalLink, setShowExternalLink] = useState("linkedIn");
 
@@ -22,7 +24,7 @@ function ExternalLinks() {
           GitHub
         </div>
       </div>
-      <a
+      <Link
         href={
           showExternalLink === "linkedIn"
             ? "https://www.linkedin.com/in/ssoydabas/"
@@ -30,12 +32,13 @@ function ExternalLinks() {
         }
         target="_blank"
         rel="noreferer"
-        className={styles["link"]}
       >
-        {showExternalLink === "linkedIn"
-          ? "LinkedIn/ssoydabas"
-          : "GitHub/ssoydabas"}
-      </a>
+        <a className={styles["link"]}>
+          {showExternalLink === "linkedIn"
+            ? "LinkedIn/ssoydabas"
+            : "GitHub/ssoydabas"}
+        </a>
+      </Link>
     </div>
   );
 }
