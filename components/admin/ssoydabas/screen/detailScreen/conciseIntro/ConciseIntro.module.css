@@ -1,0 +1,63 @@
+.for-recruiters {
+  display: grid;
+  grid-template-rows: 1fr 4fr 1fr;
+  gap: 18%;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0 6%;
+
+  overflow: hidden;
+}
+.intro {
+  text-indent: 2rem;
+}
+.list {
+  display: grid;
+  height: 100%;
+}
+.list > li {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 3%;
+
+  font-size: 1.2rem;
+}
+.list > li > span:first-of-type {
+  color: var(--secondary-color);
+  text-align: end;
+}
+.list > li > .details {
+  display: grid;
+
+  width: calc(var(--vh, 1vh) * 30);
+
+  padding: 1% 2%;
+
+  border: 2px solid #fffe;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: #fffe;
+
+  position: absolute;
+
+  transform: translateX(-50%);
+
+  transition: all ease 0.2s;
+
+  z-index: 10;
+}
+.details > li {
+  border-bottom: 1px solid var(--secondary-color);
+  padding: 2%;
+}
+.hidden {
+  opacity: 0;
+}
+.list > footer {
+  font-size: 0.8rem;
+  text-align: end;
+  text-decoration: underline;
+  transform: translateY(-200%);
+}

@@ -22,7 +22,7 @@ a {
   --primary-color: #1d1d1d;
   --transparent-primary-color: #1d1d1de9;
   --secondary-color: #faed26;
-  --transparent-secondary-color: #faed26e9;
+  --transparent-secondary-color: #faed26e4;
   --silver-color: #d0d0d0;
 
   --bold: 900;
@@ -73,6 +73,9 @@ main#main::-webkit-scrollbar-thumb {
 }
 .invisible {
   visibility: hidden;
+}
+.bold {
+  font-weight: var(--bold);  
 }
 
 .button {
