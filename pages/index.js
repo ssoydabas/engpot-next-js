@@ -1,15 +1,10 @@
-import React, { Fragment } from "react";
 import Head from "next/head";
-
-import useDeviceViewportHeight from "../hooks/useDeviceViewportHeight";
 
 import Home from "../components/home/Home";
 
-function MainPage() {
-  useDeviceViewportHeight();
-
+function Homepage() {
   return (
-    <Fragment>
+    <>
       <Head>
         <title>EngPot English</title>
         <meta
@@ -23,8 +18,8 @@ function MainPage() {
         />
       </Head>
       <Home />
-    </Fragment>
+    </>
   );
 }
 
-export default MainPage;
+export default Homepage;

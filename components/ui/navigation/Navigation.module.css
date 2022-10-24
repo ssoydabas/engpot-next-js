@@ -1,0 +1,92 @@
+.navbar {
+  background-color: var(--primary-color);
+}
+.navbar a {
+  color: #fffe;
+}
+
+.user-dropdown {
+  text-transform: capitalize;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 480px) {
+  .image-wrapper {
+    width: 40%;
+    height: 60px;
+
+    position: relative;
+  }
+  .user-dropdown {
+    display: grid;
+    place-items: end;
+
+    transform: translateX(75%);
+  }
+  .user-dropdown > div {
+    background-color: var(--primary-color);
+    border: 1px solid var(--platinum-color);
+
+    transform: scale(.8) translateX(25%);
+  }
+  .nav-collapse > div {
+    width: 60%;
+
+    margin: 6% 0;
+    padding: 0 10%;
+  }
+  .menu {
+    display: grid;
+    gap: 12%;
+  }
+  .menu > a {
+    border-bottom: 1px solid var(--secondary-color);
+  }
+  .nav-collapse > button {
+    width: 30%;
+    margin-left: 70%;
+  }
+  .toggle-button {
+    margin: 2% 0;
+
+    color: #fffe !important;
+  }
+  .toggle-button:focus {
+    outline: 0 !important;
+    border: none !important;
+  }
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1980px) {
+  .navbar {
+    height: calc(var(--vh, 1vh) * 5);
+  }
+  .image-wrapper {
+    width: 10%;
+    height: 25px;
+
+    position: relative;
+  }
+  .nav-collapse > button {
+    width: 8%;
+    transform: scale(0.8);
+  }
+  .menu {
+    width: 80%;
+  }
+  .user-dropdown {
+    transform: translateX(-40%);
+  }
+  .user-dropdown > div {
+    border: 1px solid var(--secondary-color);
+    background-color: var(--primary-color);
+    color: #fffe;
+    box-shadow: 0 0 8px var(--primary-color);
+    transform: translate(-40%, 10%);
+  }
+  .user-dropdown > div > a {
+    transition: all ease 0.4s;
+  }
+  .user-dropdown > div > a:hover * {
+    color: var(--primary-color) !important;
+  }
+}

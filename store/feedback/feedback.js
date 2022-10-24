@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = { message: null };
 
-const feedbackSlice = createSlice({
+const feedback = createSlice({
   name: "feedback",
   initialState,
   reducers: {
@@ -15,5 +15,5 @@ const feedbackSlice = createSlice({
   },
 });
 
-export const feedbackActions = feedbackSlice.actions;
-export default feedbackSlice;
+export const feedbackActions = feedback.actions;
+export default feedback;

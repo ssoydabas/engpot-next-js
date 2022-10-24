@@ -1,19 +1,20 @@
 import React from "react";
-import styles from "../../styles/Feedback.module.css";
+import styles from "./Feedback.module.css";
 
+import Backdrop from "../backdrop/Backdrop";
 import Button from "../button/Button";
 
-function Feedback(props) {
+function Feedback({ feedbackMessage, onClick }) {
   return (
-    <div className={styles["feedback"]}>
-      <div className={styles["text"]}>{props.feedbackMessage}</div>
-      <Button
-        classes="button--white"
-        type="button"
-        text="Okay"
-        onClick={props.onClick}
-      />
-    </div>
+    <>
+      <Backdrop onClick={onClick} />
+      <div className={styles["feedback"]}>
+        <div className={styles["text"]}>{feedbackMessage}</div>
+        <Button type="button" onClick={onClick}>
+          Okay
+        </Button>
+      </div>
+    </>
   );
 }
 

@@ -1,0 +1,187 @@
+@media only screen and (min-width: 300px) and (max-width: 480px) {
+  .identity {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    height: calc(var(--vh, 1vh) * 80);
+  }
+  .settings {
+    width: 10%;
+
+    margin: 6%;
+
+    filter: drop-shadow(0 0 2px var(--primary-color));
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    cursor: pointer;
+  }
+  .settings > svg {
+    width: 100%;
+    height: 100%;
+
+    fill: #fff;
+  }
+  .image-wrapper {
+    place-self: center;
+
+    width: calc(var(--vh, 1vh) * 20);
+    height: calc(var(--vh, 1vh) * 20);
+  }
+  .image {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    background-image: url(/engPot/engpot-profilePicture.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+  }
+  .personal-information-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+
+    position: relative;
+  }
+  .personal-information-form > input {
+    text-align: center;
+    font-size: 0.8rem;
+
+    height: 60%;
+  }
+  .personal-information-form > button {
+    width: 30%;
+
+    margin: 0 35%;
+
+    transform: translateY(160%);
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .name {
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    text-align: center;
+
+    filter: drop-shadow(0 0 10px #000);
+
+    white-space: nowrap;
+  }
+  .email {
+    text-align: center;
+    font-size: 1.2rem;
+
+    margin: 8% 0;
+
+    transform: translateY(80%);
+  }
+  .email > button {
+  }
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1980px) {
+  .identity {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column: 1;
+
+    height: 100%;
+
+    border: 1px solid #fff6;
+    border-radius: 8px;
+
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 10px #fff6;
+  }
+  .settings {
+    width: 12%;
+
+    margin: 2%;
+
+    filter: drop-shadow(0 0 2px var(--platinum-color));
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    cursor: pointer;
+  }
+  .settings:hover {
+    filter: drop-shadow(0 0 10px var(--platinum-color));
+  }
+  .settings > svg {
+    width: 100%;
+    height: 100%;
+  }
+  .image-wrapper {
+    place-self: center;
+
+    width: calc(var(--vh, 1vh) * 20);
+    height: calc(var(--vh, 1vh) * 20);
+  }
+  .image {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    background-image: url(/engPot/engpot-profilePicture.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+  }
+  .personal-information {
+    padding-bottom: 40%;
+  }
+  .personal-information-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+
+    position: relative;
+  }
+  .personal-information-form > input {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+  .personal-information-form > button {
+    font-size: 0.8rem;
+
+    width: 30%;
+
+    margin: 0 35%;
+
+    transform: translateY(160%);
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .name {
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    text-align: center;
+
+    white-space: nowrap;
+  }
+  .email {
+    text-align: center;
+    font-size: 1.2rem;
+
+    margin: 8% 0;
+
+    transform: translateY(80%);
+  }
+  .email > button {
+    font-size: 0.8rem;
+  }
+}

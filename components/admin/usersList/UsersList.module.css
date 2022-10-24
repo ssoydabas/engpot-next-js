@@ -1,4 +1,5 @@
-.users-list {
+@media only screen and (min-width: 300px) and (max-width: 480px) {
+  .users-list {
     display: grid;
     place-items: center;
     grid-template-rows: min-content;
@@ -9,4 +10,20 @@
     padding: 2% 6%;
     overflow: scroll;
     overflow-x: hidden;
+  }
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1980px) {
+  .users-list {
+    display: grid;
+    place-items: center;
+    grid-template-rows: min-content;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 2% 6%;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
 }

@@ -1,12 +1,9 @@
-import React, { useEffect } from "react";
-import { Fragment } from "react";
+import { useEffect } from "react";
 
 import { useDispatch } from "react-redux";
 import { authenticationActions } from "../../../store/authentication/authentication";
 
-import FeedbackProvider from "../feedbackProvider/FeedbackProvider";
-
-function AuthenticationRefresher(props) {
+function AuthenticationRefresher({ children }) {
   const dispatch = useDispatch();
 
   const safeGuard = () => {
@@ -18,11 +15,7 @@ function AuthenticationRefresher(props) {
     safeGuard();
   });
 
-  return (
-    <Fragment>
-      <FeedbackProvider>{props.children}</FeedbackProvider>
-    </Fragment>
-  );
+  return <div>{children}</div>;
 }
 
 export default AuthenticationRefresher;

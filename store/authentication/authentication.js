@@ -4,12 +4,9 @@ const initialState = {
   authenticationToken: null,
   user: null,
   authenticationTimer: null,
-
-  displayForm: false,
-  formMode: "login",
 };
 
-const authenticationSlice = createSlice({
+const authentication = createSlice({
   name: "authentication",
   initialState,
   reducers: {
@@ -46,15 +43,8 @@ const authenticationSlice = createSlice({
       state.authenticationToken = state.authenticationToken;
       state.user = action.payload.user;
     },
-
-    toggleFormDisplay(state) {
-      state.displayForm = !state.displayForm;
-    },
-    changeFormMode(state, action) {
-      state.formMode = action.payload;
-    },
   },
 });
 
-export const authenticationActions = authenticationSlice.actions;
-export default authenticationSlice;
+export const authenticationActions = authentication.actions;
+export default authentication;

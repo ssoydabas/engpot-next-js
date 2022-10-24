@@ -4,6 +4,10 @@ function useHttp() {
   const [isLoading, setIsLoading] = useState(false);
   const [httpError, setHttpError] = useState(null);
 
+  const closeErrorMessage = () => {
+    setHttpError(null);
+  };
+
   const sendRequest = async (requestConfig, dataProcessingLogic) => {
     setIsLoading(true);
     setHttpError(null);
@@ -29,10 +33,11 @@ function useHttp() {
   };
 
   return {
-    isLoading,
-    setIsLoading,
     httpError,
     setHttpError,
+    closeErrorMessage,
+    setIsLoading,
+    isLoading,
     sendRequest,
   };
 }

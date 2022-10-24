@@ -1,0 +1,165 @@
+@media only screen and (min-width: 300px) and (max-width: 480px) {
+  .container {
+    display: grid;
+    place-items: center;
+
+    width: 100%;
+    height: calc(var(--vh, 1vh) * 95);
+
+    padding: 0;
+
+    background-color: var(--platinum-color);
+  }
+  .container > div {
+    display: grid;
+
+    width: 100%;
+    height: 100%;
+  }
+  .form-container {
+    display: grid;
+    place-items: center;
+    place-self: center;
+
+    width: 100%;
+    height: 80%;
+
+    transform: translateY(-10%);
+  }
+  .title {
+    font-size: 1.4rem;
+    font-weight: var(--bold);
+  }
+  .text {
+    font-size: 0.9rem;
+    text-shadow: 0 0 2px #0009;
+  }
+  .form-container > form {
+    width: 100%;
+    height: 100%;
+
+    padding: 0 8%;
+  }
+  .form-container > form > div {
+    margin: 4% 0;
+  }
+  .form-container label {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+  .form-container input,
+  .form-container textarea {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+  .form-container button {
+    width: 60%;
+    height: calc(var(--vh, 1vh) * 6);
+    margin: 0 20%;
+
+    transform: translateY(40%);
+  }
+
+  .brand-logo {
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--primary-color);
+  }
+  .policies {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100%;
+
+    color: #fffe;
+  }
+  .policies > a {
+    font-size: 0.8rem;
+    text-shadow: 2px 2px 2px #fffe;
+  }
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1980px) {
+  .container {
+    display: grid;
+    place-items: center;
+
+    width: 100%;
+    height: calc(var(--vh, 1vh) * 95);
+
+    padding: 0;
+
+    background-color: var(--platinum-color);
+  }
+  .container > div {
+    width: 100%;
+    height: 100%;
+  }
+  .form-container {
+    display: grid;
+    place-items: center;
+    place-self: center;
+
+    width: 100%;
+    height: 60%;
+  }
+  .title {
+    font-size: 2rem;
+    font-weight: var(--bold);
+  }
+  .text {
+    font-size: 1.2rem;
+    text-shadow: 0 0 2px #0009;
+  }
+  .form-container > form {
+    width: 100%;
+    height: 100%;
+
+    padding: 0 8%;
+  }
+  .form-container > form > div {
+    margin: 4% 0;
+  }
+  .form-container label {
+    width: 100%;
+  }
+  .form-container input {
+    width: 100%;
+  }
+  .form-container button {
+    width: 20%;
+    height: calc(var(--vh, 1vh) * 5);
+    margin: 0 40%;
+  }
+
+  .brand-logo {
+    width: 60%;
+    height: 100%;
+
+    background-color: var(--primary-color);
+
+    background-image: url(/engpot/engpot-wallpaper.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 60%;
+
+    position: relative;
+  }
+  .policies {
+    display: flex;
+    justify-content: space-around;
+
+    width: 60%;
+
+    color: #fffe;
+
+    position: absolute;
+    bottom: 4%;
+    left: 0;
+  }
+  .policies > a {
+    text-shadow: 2px 2px 2px #fffe;
+  }
+}

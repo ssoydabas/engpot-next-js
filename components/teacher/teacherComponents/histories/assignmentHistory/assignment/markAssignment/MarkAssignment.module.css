@@ -1,0 +1,201 @@
+@media only screen and (min-width: 300px) and (max-width: 480px) {
+  .mark-assignment {
+    display: grid;
+    place-items: center;
+    grid-template-rows: 1fr 1fr;
+    gap: 2%;
+
+    width: 100%;
+    height: 100%;
+
+  
+    padding: 2% 6%;
+    border: 1px solid var(--platinum-color);
+    border-radius: 8px;
+
+    background-color: var(--primary-color);
+    color: #fffe;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: 30;
+  }
+  .student-answer {
+    width: 100%;
+    height: 100%;
+
+    padding: 1% 2%;
+
+    border: 1px solid #fffe;
+    border-radius: 6px;
+
+    background-color: var(--primary-color);
+    color: #fffe;
+    box-shadow: 0 0 2px 1px #fff;
+
+    font-size: 0.8rem;
+
+    white-space: pre-line;
+  }
+  .teacher-action {
+    display: grid;
+    grid-template-rows: 3fr 2fr;
+    gap: 2%;
+
+    width: 100%;
+    height: 100%;
+  }
+  .note {
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 2% 4%;
+  }
+  .note > textarea {
+    padding: .5% 1%;
+    resize: none;
+
+    border: 1px solid #fff;
+    border-radius: 6px;
+
+    background-color: var(--primary-color) !important;
+    color: #fffe !important;
+
+    font-size: 0.8rem;
+  }
+  .mark {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    width: 100%;
+    height: 40%;
+
+    padding: 2% 4%;
+  }
+  .mark > select {
+    width: 100%;
+
+    text-align: center;
+
+    border: 1px solid #fff;
+    border-radius: 6px;
+
+    background-color: var(--primary-color);
+    color: #fffe;
+
+    font-size: 1rem;
+  }
+  .teacher-action > button {
+    padding: 0.5% 6%;
+
+    position: absolute;
+    bottom: 2%;
+    right: 50%;
+
+    transform: translateX(50%);
+  }
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1980px) {
+  .mark-assignment {
+    display: grid;
+    place-items: center;
+    grid-template-rows: 4fr 4fr;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 2% 6%;
+    border: 1px solid var(--platinum-color);
+    border-radius: 8px;
+
+    background-color: var(--primary-color);
+    color: #fffe;
+
+    position: absolute;
+
+    z-index: 20;
+  }
+  .student-answer {
+    width: 100%;
+    height: 100%;
+
+    padding: 1% 2%;
+
+    border: 1px solid #fffe;
+    border-radius: 6px;
+
+    background-color: var(--primary-color);
+    color: #fffe;
+
+    font-size: 1rem;
+
+    white-space: pre-line;
+
+    transition: all ease 0.4s;
+  }
+  .teacher-action {
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+
+    width: 100%;
+    height: 100%;
+  }
+  .note {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+
+    padding: 2% 4%;
+  }
+  .note > textarea {
+    padding: .5% 1%;
+    resize: none;
+
+    border: 1px solid #fff;
+    border-radius: 6px;
+
+    background-color: var(--primary-color) !important;
+    color: #fffe !important;
+
+    font-size: 1.2rem;
+  }
+  .mark {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+
+    height: 40%;
+
+    padding: 2% 4%;
+
+    transform: translateY(-60%);
+  }
+  .mark > select {
+    width: 10%;
+
+    text-align: center;
+
+    border: 1px solid #fff;
+    border-radius: 6px;
+
+    background-color: var(--primary-color);
+    color: #fffe;
+
+    font-size: 1.2rem;
+  }
+  .teacher-action > button {
+    padding: 0.5% 6%;
+
+    position: absolute;
+    bottom: 4%;
+    right: 50%;
+
+    transform: translateX(50%);
+  }
+}

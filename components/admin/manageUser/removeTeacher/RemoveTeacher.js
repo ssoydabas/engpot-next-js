@@ -1,36 +1,30 @@
-import React, { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useDispatch } from "react-redux";
-import { feedbackActions } from "../../../../store/feedback/feedback";
+import { feedbackActions } from "../../../../store/feedback/Feedback";
 
-import useHttp from "../../../../hooks/useHttp";
-
-import Error from "../../../ui/components/error/Error";
-import LoadingSpinner from "../../../ui/components/loadingSpinner/LoadingSpinner";
 import Button from "../../../ui/components/button/Button";
 
-function RemoveTeacher(props) {
+function RemoveTeacher({
+  userToManage,
+  setUserToManage,
+  refreshUsersHandler,
+  http,
+}) {
   const dispatch = useDispatch();
   const [teacherObject, setTeacherObject] = useState(null);
-
-  const { httpError, isLoading, sendRequest, setHttpError, setIsLoading } =
-    useHttp();
 
   useEffect(() => {
     const requestConfig = {
       url: `${process.env.API_URL}/findTeacherByStudentId/${userToManage._id}`,
     };
     const dataProcessingLogic = (data) => {
-      setIsLoading(false);
+      http.setIsLoading(false);
       const { teacher } = data;
       setTeacherObject(teacher);
     };
-    sendRequest(requestConfig, dataProcessingLogic);
+    http.sendRequest(requestConfig, dataProcessingLogic);
   }, []);
-
-  const { userToManage } = props;
-  const { setUserToManage } = props;
-  const { refreshUsersHandler } = props;
 
   const removeTeacherHandler = () => {
     if (!teacherObject || !teacherObject._id) {
@@ -41,7 +35,7 @@ function RemoveTeacher(props) {
 
       return;
     }
-    
+
     const data = {
       studentId: userToManage._id,
       teacherId: teacherObject._id,
@@ -57,25 +51,17 @@ function RemoveTeacher(props) {
       body: data,
     };
     const dataProcessingLogic = (data) => {
-      setIsLoading(false);
+      http.setIsLoading(false);
       const { message } = data;
       dispatch(feedbackActions.setMessage(message));
       setUserToManage(null);
       refreshUsersHandler();
     };
-    sendRequest(requestConfig, dataProcessingLogic);
-  };
-
-  const closeErrorMessageHandler = () => {
-    setHttpError(false);
+    http.sendRequest(requestConfig, dataProcessingLogic);
   };
 
   return (
-    <Fragment>
-      {isLoading && <LoadingSpinner />}
-      {httpError && (
-        <Error text={httpError} onClick={closeErrorMessageHandler} />
-      )}
+    <>
       <div>Use here to remove teachers</div>
       <select>
         <option
@@ -90,13 +76,10 @@ function RemoveTeacher(props) {
             : teacherObject}
         </option>
       </select>
-      <Button
-        classes="button--white"
-        type="button"
-        text="Remove Teacher"
-        onClick={removeTeacherHandler}
-      />
-    </Fragment>
+      <Button type="button" onClick={removeTeacherHandler}>
+        Remove Teacher
+      </Button>
+    </>
   );
 }
 

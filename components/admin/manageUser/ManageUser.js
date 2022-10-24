@@ -1,15 +1,29 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import styles from "./ManageUser.module.css";
 
 import { useSelector, useDispatch } from "react-redux";
-import { feedbackActions } from "../../../store/feedback/feedback";
+import { feedbackActions } from "../../../store/feedback/Feedback";
+
+import useWindowDimensions from "../../../hooks/useWindowDimensions";
+
+import Form from "react-bootstrap/Form";
+import Container from "react-bootstrap/Container";
 
 import RemoveTeacher from "./removeTeacher/RemoveTeacher";
 import AssignStudent from "./assignStudent/AssignStudent";
 
+import Backdrop from "../../ui/components/backdrop/Backdrop";
 import Button from "../../ui/components/button/Button";
 
-function ManageUser(props) {
+import Exit from "../../../public/svg/Exit";
+
+function ManageUser({
+  classifiedUsers,
+  userToManage,
+  setUserToManage,
+  refreshUsersHandler,
+  http,
+}) {
   const dispatch = useDispatch();
   const { authentication } = useSelector((state) => state);
 
@@ -28,11 +42,7 @@ function ManageUser(props) {
   const studentPlanRef = useRef();
   const studentLevelRef = useRef();
 
-  const { classifiedUsers } = props;
-  const { userToManage } = props;
-  const { setUserToManage } = props;
-  const { refreshUsersHandler } = props;
-  const { httpFunctions } = props;
+  const windowDimensions = useWindowDimensions();
 
   const editRequestHandler = (e) => {
     e.preventDefault();
@@ -73,180 +83,199 @@ function ManageUser(props) {
       body: data,
     };
     const dataProcessingLogic = async (data) => {
-      httpFunctions.setIsLoading(false);
+      http.setIsLoading(false);
       const { message } = data;
       dispatch(feedbackActions.setMessage(message));
       setUserToManage(false);
       refreshUsersHandler();
     };
 
-    httpFunctions.sendRequest(requestConfig, dataProcessingLogic);
+    http.sendRequest(requestConfig, dataProcessingLogic);
   };
 
   return (
-    <form
-      className={styles["manage-user-container"]}
-      onSubmit={editRequestHandler}
-    >
-      <div className={styles["name-surname"]}>
-        <input
-          type="text"
-          defaultValue={userToManage.personalInfo.name}
-          ref={nameRef}
+    <>
+      {windowDimensions.width <= 480 && (
+        <Exit
+          className={styles["x-button"]}
+          fill={"#fff"}
+          onClick={setUserToManage.bind(null, null)}
         />
-        <input
-          type="text"
-          defaultValue={userToManage.personalInfo.surname}
-          ref={surnameRef}
-        />
-      </div>
-      <div className={styles["email-status"]}>
-        <div>
-          <label>Email</label>
-          <input
-            type="email"
-            defaultValue={userToManage.personalInfo.emailInfo.email}
-            ref={emailRef}
+      )}
+      {windowDimensions.width > 480 && (
+        <Backdrop onClick={setUserToManage.bind(null, null)} />
+      )}
+      <Form
+        className={styles["manage-user-container"]}
+        onSubmit={editRequestHandler}
+      >
+        <Form.Group className={styles["name-surname"]}>
+          <Form.Control
+            type="text"
+            defaultValue={userToManage.personalInfo.name}
+            ref={nameRef}
           />
-        </div>
+          <Form.Control
+            type="text"
+            defaultValue={userToManage.personalInfo.surname}
+            ref={surnameRef}
+          />
+        </Form.Group>
 
-        <div>
-          <label>Status</label>
-          <select defaultValue={userToManage.engPotInfo.status} ref={statusRef}>
-            <option defaultValue="user">user</option>
-            <option defaultValue="student">student</option>
-            <option defaultValue="teacher">teacher</option>
-            <option defaultValue="admin">admin</option>
-          </select>
-        </div>
-      </div>
-
-      <div className={styles["engpot-info"]}>
-        <section className={styles["assign-remove"]}>
-          {userToManage.engPotInfo.status === "student" && (
-            <RemoveTeacher
-              userToManage={userToManage}
-              setUserToManage={setUserToManage}
-              refreshUsersHandler={refreshUsersHandler}
-              httpFunctions={httpFunctions}
+        <Form.Group className={styles["email-status"]}>
+          <Form.Group>
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              type="email"
+              defaultValue={userToManage.personalInfo.emailInfo.email}
+              ref={emailRef}
             />
-          )}
-          {userToManage.engPotInfo.status === "teacher" && (
-            <AssignStudent
-              userToManage={userToManage}
-              setUserToManage={setUserToManage}
-              students={classifiedUsers.students}
-              refreshUsersHandler={refreshUsersHandler}
-              httpFunctions={httpFunctions}
-            />
-          )}
-        </section>
+          </Form.Group>
 
-        <div className={styles["engpot-details"]}>
-          <div className={styles["left-side"]}>
-            <div>
-              <label>Lessons Taken</label>
-              <input
-                type="number"
-                defaultValue={
-                  userToManage.engPotInfo.engPotDetails.lessonsTaken
-                }
-                ref={lessonsTakenRef}
-              />
-            </div>
-            <div>
-              <label>Speaking Lessons Taken</label>
-              <input
-                type="number"
-                defaultValue={
-                  userToManage.engPotInfo.engPotDetails.speakingLessonsTaken
-                }
-                ref={speakingLessonsTakenRef}
-              />
-            </div>
-            <div>
-              <label>Engpot Tokens</label>
-              <input
-                type="number"
-                defaultValue={userToManage.engPotInfo.engPotDetails.engPotToken}
-                ref={engPotTokenRef}
-              />
-            </div>
-            <div>
-              <label>Lessons Earned</label>
-              <input
-                type="number"
-                defaultValue={
-                  userToManage.engPotInfo.engPotDetails.lessonsEarned
-                }
-                ref={lessonsEarnedRef}
-              />
-            </div>
-            <div>
-              <label>Lessons Cancelled</label>
-              <input
-                type="number"
-                defaultValue={
-                  userToManage.engPotInfo.engPotDetails.lessonsCancelled
-                }
-                ref={lessonsCancelledRef}
-              />
-            </div>
-          </div>
+          <Form.Group>
+            <Form.Label>Status</Form.Label>
+            <Form.Group
+              as={"select"}
+              defaultValue={userToManage.engPotInfo.status}
+              ref={statusRef}
+            >
+              <option defaultValue="user">user</option>
+              <option defaultValue="student">student</option>
+              <option defaultValue="teacher">teacher</option>
+              <option defaultValue="admin">admin</option>
+            </Form.Group>
+          </Form.Group>
+        </Form.Group>
 
-          <div className={styles["right-side"]}>
-            <div>
-              <label>Lessons Postponed</label>
-              <input
-                type="number"
-                defaultValue={
-                  userToManage.engPotInfo.engPotDetails.lessonsPostponed
-                }
-                ref={lessonsPostponedRef}
+        <Container fluid className={styles["engpot-info"]}>
+          <section className={styles["assign-remove"]}>
+            {userToManage.engPotInfo.status === "student" && (
+              <RemoveTeacher
+                userToManage={userToManage}
+                setUserToManage={setUserToManage}
+                refreshUsersHandler={refreshUsersHandler}
+                http={http}
               />
-            </div>
-            <div>
-              <label>Lessons Ghosted</label>
-              <input
-                type="number"
-                defaultValue={
-                  userToManage.engPotInfo.engPotDetails.lessonsGhosted
-                }
-                ref={lessonsGhostedRef}
+            )}
+            {userToManage.engPotInfo.status === "teacher" && (
+              <AssignStudent
+                userToManage={userToManage}
+                setUserToManage={setUserToManage}
+                students={classifiedUsers.students}
+                refreshUsersHandler={refreshUsersHandler}
+                http={http}
               />
-            </div>
-            <div>
-              <label>Engpot Credits</label>
-              <input
-                type="number"
-                defaultValue={
-                  userToManage.engPotInfo.engPotDetails.engPotCredits
-                }
-                ref={engPotCreditsRef}
-              />
-            </div>
-            <div>
-              <label>Student Plan</label>
-              <input
-                type="text"
-                defaultValue={userToManage.engPotInfo.studentPlan}
-                ref={studentPlanRef}
-              />
-            </div>
-            <div>
-              <label>Student Level</label>
-              <input
-                type="text"
-                defaultValue={userToManage.engPotInfo.studentLevel}
-                ref={studentLevelRef}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+            )}
+          </section>
 
-      <Button classes="button--white" type="submit" text="Submit" />
-    </form>
+          <Container fluid className={styles["engpot-details"]}>
+            <div className={styles["column"]}>
+              <Form.Group>
+                <Form.Label>Lessons Taken</Form.Label>
+                <Form.Control
+                  type="number"
+                  defaultValue={
+                    userToManage.engPotInfo.engPotDetails.lessonsTaken
+                  }
+                  ref={lessonsTakenRef}
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Label>Speaking Lessons Taken</Form.Label>
+                <Form.Control
+                  type="number"
+                  defaultValue={
+                    userToManage.engPotInfo.engPotDetails.speakingLessonsTaken
+                  }
+                  ref={speakingLessonsTakenRef}
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Label>Engpot Tokens</Form.Label>
+                <Form.Control
+                  type="number"
+                  defaultValue={
+                    userToManage.engPotInfo.engPotDetails.engPotToken
+                  }
+                  ref={engPotTokenRef}
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Label>Lessons Earned</Form.Label>
+                <Form.Control
+                  type="number"
+                  defaultValue={
+                    userToManage.engPotInfo.engPotDetails.lessonsEarned
+                  }
+                  ref={lessonsEarnedRef}
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Label>Lessons Cancelled</Form.Label>
+                <Form.Control
+                  type="number"
+                  defaultValue={
+                    userToManage.engPotInfo.engPotDetails.lessonsCancelled
+                  }
+                  ref={lessonsCancelledRef}
+                />
+              </Form.Group>
+            </div>
+
+            <div className={styles["column"]}>
+              <Form.Group>
+                <label>Lessons Postponed</label>
+                <input
+                  type="number"
+                  defaultValue={
+                    userToManage.engPotInfo.engPotDetails.lessonsPostponed
+                  }
+                  ref={lessonsPostponedRef}
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Label>Lessons Ghosted</Form.Label>
+                <Form.Control
+                  type="number"
+                  defaultValue={
+                    userToManage.engPotInfo.engPotDetails.lessonsGhosted
+                  }
+                  ref={lessonsGhostedRef}
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Label>Engpot Credits</Form.Label>
+                <Form.Control
+                  type="number"
+                  defaultValue={
+                    userToManage.engPotInfo.engPotDetails.engPotCredits
+                  }
+                  ref={engPotCreditsRef}
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Label>Student Plan</Form.Label>
+                <Form.Control
+                  type="text"
+                  defaultValue={userToManage.engPotInfo.studentPlan}
+                  ref={studentPlanRef}
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Label>Student Level</Form.Label>
+                <Form.Control
+                  type="text"
+                  defaultValue={userToManage.engPotInfo.studentLevel}
+                  ref={studentLevelRef}
+                />
+              </Form.Group>
+            </div>
+          </Container>
+        </Container>
+
+        <Button type="submit">Submit</Button>
+      </Form>
+    </>
   );
 }
 

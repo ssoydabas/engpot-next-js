@@ -1,0 +1,147 @@
+@media only screen and (min-width: 300px) and (max-width: 480px) {
+  .statistics {
+    display: grid;
+    place-items: center;
+
+    width: 80%;
+    height: calc(var(--vh, 1vh) * 80);
+
+    margin: auto;
+    padding: 2% 4%;
+    border: 1px solid var(--platinum-color);
+    border-radius: 8px;
+
+    background-color: var(--primary-color);
+    color: #fffe;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: 20;
+
+    user-select: none;
+  }
+  .x-button {
+    display: grid;
+    place-items: center;
+
+    width: 10%;
+    height: 6%;
+
+    color: #fffe;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  .engpot-details {
+    width: 100%;
+    height: 100%;
+  }
+  .engpot-details > div {
+    display: grid;
+    place-items: center;
+    grid-template-rows: 1fr 2fr;
+
+    width: 100%;
+    height: 40%;
+  }
+  .engpot-details label {
+    width: 100%;
+
+    border-bottom: 1px solid #fffe;
+
+    text-align: center;
+  }
+  .engpot-details section {
+    display: grid;
+    place-items: center;
+
+    width: calc(var(--vh, 1vh) * 12);
+    height: calc(var(--vh, 1vh) * 12);
+
+    border: 1px solid var(--platinum-color);
+    border-radius: 50%;
+
+    box-shadow: 0 0 6px 2px var(--platinum-color);
+
+    font-size: 1.4rem;
+
+    transition: all ease 0.8s;
+  }
+  .engpot-details section:active {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 6px 2px var(--secondary-color);
+  }
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1980px) {
+  .statistics {
+    display: grid;
+    place-items: center;
+
+    width: 80%;
+    height: calc(var(--vh, 1vh) * 80);
+
+    margin: auto;
+    padding: 2% 4%;
+    border: 1px solid var(--platinum-color);
+    border-radius: 8px;
+
+    background-color: var(--primary-color);
+    color: #fffe;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: 20;
+
+    user-select: none;
+  }
+  .engpot-details {
+    width: 100%;
+    height: 100%;
+  }
+  .engpot-details > div {
+    display: grid;
+    place-items: center;
+    grid-template-rows: 1fr 2fr;
+
+    width: 100%;
+    height: 40%;
+  }
+  .engpot-details label {
+    width: 100%;
+
+    border-bottom: 1px solid #fffe;
+
+    text-align: center;
+  }
+  .engpot-details section {
+    display: grid;
+    place-items: center;
+
+    width: calc(var(--vh, 1vh) * 12);
+    height: calc(var(--vh, 1vh) * 12);
+
+    border: 1px solid var(--platinum-color);
+    border-radius: 50%;
+
+    box-shadow: 0 0 6px 2px var(--platinum-color);
+
+    font-size: 1.4rem;
+
+    transition: all ease 0.8s;
+  }
+  .engpot-details section:hover {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 6px 2px var(--secondary-color);
+  }
+}

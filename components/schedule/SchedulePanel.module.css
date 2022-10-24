@@ -1,0 +1,175 @@
+@media only screen and (min-width: 300px) and (max-width: 480px) {
+  .schedule {
+    width: 100%;
+    height: 85vh;
+
+    padding: 4% 6%;
+
+    position: relative;
+  }
+  /* Schedule Container Itself */
+  /* Schedule Header */
+  .schedule > div > div:first-of-type {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    place-items: center;
+  }
+  .schedule > div > div:first-of-type > div:first-of-type {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .schedule > div > div:first-of-type > div:nth-of-type(2) {
+    display: grid;
+    place-items: center;
+
+    width: 100%;
+    height: 100%;
+  }
+  .schedule > div > div:first-of-type > div:nth-of-type(2) > h2 {
+    font-size: 1.2rem;
+
+    transform: translateY(60%);
+  }
+  .schedule > div > div:first-of-type > div:last-of-type {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  /* Schedule Body */
+  /* Schedule Body */
+  /* Schedule Body */
+  /* Schedule Body */
+  .schedule > div > div:last-of-type > div > table {
+  }
+  /* Table Head */
+  /* Table Head */
+  /* Table Head */
+  /* Table Head */
+  /* Day Labels Container */
+  .schedule
+    > div
+    > div:last-of-type
+    > div
+    > table
+    > thead
+    > tr
+    > th
+    > div
+    > div {
+    overflow: hidden !important;
+  }
+  /* Colgroup Empty Container */
+  .schedule
+    > div
+    > div:last-of-type
+    > div
+    > table
+    > thead
+    > tr
+    > th
+    > div
+    > div
+    > table
+    > colgroup {
+  }
+  /* Column Header */
+  .day-header * {
+    color: var(--primary-color) !important;
+  }
+  .schedule
+    > div
+    > div:last-of-type
+    > div
+    > table
+    > thead
+    > tr
+    > th
+    > div
+    > div
+    > table
+    > thead
+    > tr
+    > th[role="columnheader"] {
+    color: var(--primary-color) !important;
+  }
+  /* Empty Containers Below Day Labels */
+  .schedule > div > div:last-of-type > div > table > tbody > tr:first-of-type {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1980px) {
+  .schedule {
+    width: 100%;
+    height: 95vh;
+
+    padding: 4% 6%;
+
+    position: relative;
+  }
+  /* Schedule Container Itself */
+  /* Schedule Header */
+  .schedule > div > div:first-of-type {
+  }
+  /* Schedule Body */
+  /* Schedule Body */
+  /* Schedule Body */
+  /* Schedule Body */
+  .schedule > div > div:last-of-type > div > table {
+  }
+  /* Table Head */
+  /* Table Head */
+  /* Table Head */
+  /* Table Head */
+  /* Day Labels Container */
+  .schedule
+    > div
+    > div:last-of-type
+    > div
+    > table
+    > thead
+    > tr
+    > th
+    > div
+    > div {
+    overflow: hidden !important;
+  }
+  /* Colgroup Empty Container */
+  .schedule
+    > div
+    > div:last-of-type
+    > div
+    > table
+    > thead
+    > tr
+    > th
+    > div
+    > div
+    > table
+    > colgroup {
+  }
+  /* Column Header */
+  .day-header * {
+    color: var(--primary-color) !important;
+  }
+  .schedule
+    > div
+    > div:last-of-type
+    > div
+    > table
+    > thead
+    > tr
+    > th
+    > div
+    > div
+    > table
+    > thead
+    > tr
+    > th[role="columnheader"] {
+    color: var(--primary-color) !important;
+  }
+  /* Empty Containers Below Day Labels */
+  .schedule > div > div:last-of-type > div > table > tbody > tr:first-of-type {
+    display: none;
+  }
+}

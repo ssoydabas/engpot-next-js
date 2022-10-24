@@ -1,0 +1,38 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(var(--vh, 1vh) * 100);
+  background: rgba(0, 0, 0, 0.6);
+}
+.index-1 {
+  z-index: 10;
+}
+.index-2 {
+  z-index: 20;
+}
+.index-3 {
+  z-index: 30;
+}
+.index-4 {
+  z-index: 40;
+}
+.index-5 {
+  z-index: 50;
+}
+.index-6 {
+  z-index: 60;
+}
+.index-7 {
+  z-index: 70;
+}
+.index-8 {
+  z-index: 80;
+}
+.index-9 {
+  z-index: 90;
+}
+.index-10 {
+  z-index: 100;
+}

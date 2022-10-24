@@ -1,0 +1,45 @@
+@media only screen and (min-width: 300px) and (max-width: 480px) {
+  .teacher-actions {
+    width: 90%;
+    height: calc(var(--vh, 1vh) * 85);
+
+    margin: auto;
+    padding: 0;
+    border-radius: 8px;
+    border: 1px solid var(--platinum-color);
+
+    background-color: var(--primary-color);
+    color: #fffe;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: 30;
+  }
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1980px) {
+  .teacher-actions {
+    width: 80%;
+    height: calc(var(--vh, 1vh) * 80);
+
+    margin: auto;
+    padding: 2% 10%;
+    border-radius: 8px;
+    border: 1px solid var(--platinum-color);
+
+    background-color: var(--primary-color);
+    color: #fffe;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: 30;
+  }
+}

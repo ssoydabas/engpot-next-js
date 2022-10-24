@@ -1,7 +1,7 @@
-import React, { Fragment, useRef, useState } from "react";
+import React, { useRef } from "react";
 
 import { useDispatch } from "react-redux";
-import { feedbackActions } from "../../../../store/feedback/feedback";
+import { feedbackActions } from "../../../../store/feedback/Feedback";
 
 import Button from "../../../ui/components/button/Button";
 
@@ -18,15 +18,15 @@ const filterStudents = (students) => {
   });
 };
 
-function AssignStudent(props) {
+function AssignStudent({
+  students,
+  userToManage,
+  setUserToManage,
+  refreshUsersHandler,
+  http,
+}) {
   const dispatch = useDispatch();
   const selectRef = useRef();
-
-  let { students } = props;
-  const { userToManage } = props;
-  const { setUserToManage } = props;
-  const { refreshUsersHandler } = props;
-  const { httpFunctions } = props;
 
   students = filterStudents(students);
 
@@ -52,20 +52,20 @@ function AssignStudent(props) {
         body: data,
       };
       const dataProcessingLogic = (data) => {
-        httpFunctions.setIsLoading(false);
+        http.setIsLoading(false);
         const { message } = data;
         dispatch(feedbackActions.setMessage(message));
         setUserToManage(null);
         refreshUsersHandler();
       };
-      httpFunctions.sendRequest(requestConfig, dataProcessingLogic);
+      http.sendRequest(requestConfig, dataProcessingLogic);
     } else {
-      httpFunctions.setHttpError("There is no student to assign.")
+      http.setHttpError("There is no student to assign.");
     }
   };
 
   return (
-    <Fragment>
+    <>
       <div>Use here to assign students</div>
       <select ref={selectRef}>
         {students
@@ -77,13 +77,10 @@ function AssignStudent(props) {
             ))
           : null}
       </select>
-      <Button
-        classes="button--white"
-        type="button"
-        text="Assign Student"
-        onClick={assignStudentHandler}
-      />
-    </Fragment>
+      <Button type="button" onClick={assignStudentHandler}>
+        Assign Student
+      </Button>
+    </>
   );
 }
 

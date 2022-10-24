@@ -1,0 +1,99 @@
+
+@media only screen and (min-width: 300px) and (max-width: 480px) {
+    .about {
+        height: 100%;
+
+        padding: 2% 0%;
+      
+        background: linear-gradient(#0009, #000e), url("/backgrounds/doodle.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        position: relative;
+      }
+      .about-toggler {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+      
+        width: 8%;
+        height: calc(var(--vh, 1vh) * 20);
+
+        margin: 2%;
+      
+        border-radius: 8px;
+        border: 1px solid #fff4;
+      
+        box-shadow: 0 0 10px 10px var(--primary-color);
+        background: var(--primary-color);
+        color: var(--silver-color);
+      
+        position: absolute;
+        top: 0%;
+        right: 0%;
+      
+        z-index: 30;
+      }
+      .about-toggler > div {
+        font-size: .8rem;
+
+        transform: rotate(-90deg);
+        transition: all ease 0.4s;
+        cursor: pointer;
+      }
+      .about-active {
+        transform: scale(1.2) rotate(-75deg) !important;
+        color: var(--secondary-color);
+      }
+      
+}
+
+
+
+
+@media only screen and (min-width: 1201px) and (max-width: 1980px) {
+    .about {
+        height: calc(var(--vh, 1vh) * 95);
+      
+        padding: 2% 6%;
+      
+        background: linear-gradient(#0006, #0006), url("/backgrounds/doodle.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        position: relative;
+      }
+      .about-toggler {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      
+        width: 14%;
+        height: calc(var(--vh, 1vh) * 6);
+      
+        border-radius: 8px;
+        border: 1px solid var(--primary-color);
+      
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+      
+        position: absolute;
+        top: 2%;
+        right: 10%;
+      
+        z-index: 30;
+      }
+      .about-toggler > div {
+        transition: all ease 0.4s;
+        cursor: pointer;
+      }
+      .about-active {
+        color: var(--primary-color);
+        text-shadow: 1px 1px 2px var(--primary-color);
+        transform: scale(1.4);
+      }
+      
+}

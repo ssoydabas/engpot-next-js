@@ -1,0 +1,122 @@
+.auth-form {
+  display: grid;
+  place-items: center;
+
+  margin: auto;
+
+  border: 1px solid #fffe;
+  border-radius: 8px;
+
+  background-color: var(--primary-color);
+  color: #fffe;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  z-index: 20;
+}
+.internal-links > div:last-of-type > a {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 480px) {
+  .auth-form {
+    width: 90%;
+    height: calc(var(--vh, 1vh) * 80);
+
+    padding: 2% 4%;
+
+    transform: translateY(6%);
+  }
+  .auth-form label {
+    padding-left: 2%;
+
+    font-size: 0.9rem;
+  }
+  .auth-form input {
+    padding: 0 4%;
+    border: 1px solid #fff;
+    border-radius: 6px;
+
+    background-color: var(--primary-color);
+    color: #fffe;
+
+    font-size: 1rem;
+
+    transform: translateY(-20%);
+  }
+  .auth-form button {
+    padding: 0.5% 6%;
+  }
+  .internal-links {
+    display: grid;
+  }
+  .internal-links > div:first-of-type {
+    place-self: end;
+  }
+  .internal-links > div:last-of-type {
+    place-self: end;
+
+    transform: translate(25%, 80%) scale(0.6);
+  }
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1980px) {
+  .auth-form {
+    width: 50%;
+    height: calc(var(--vh, 1vh) * 70);
+
+    padding: 2% 4%;
+  }
+  .auth-form label {
+    padding-left: 2%;
+
+    font-size: 1.2rem;
+  }
+  .auth-form input {
+    background-color: var(--primary-color);
+    color: #fffe;
+  }
+  .auth-form > button {
+    width: 20%;
+
+    padding: 0.5% 2%;
+
+    transform: translateY(120%);
+  }
+  .name-surname {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6%;
+  }
+  .password {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6%;
+  }
+  .internal-links {
+    display: grid;
+  }
+  .internal-links > div:first-of-type {
+    place-self: end;
+
+    padding: 0.5% 2%;
+    border: 1px solid #fff2;
+    border-radius: 8px;
+
+    transition: border-color ease 0.4s;
+    cursor: pointer;
+  }
+  .internal-links > div:first-of-type:hover {
+    border-color: #fff;
+  }
+  .internal-links > div:last-of-type {
+    place-self: end;
+
+    transform: translate(25%, 200%) scale(0.8);
+  }
+}

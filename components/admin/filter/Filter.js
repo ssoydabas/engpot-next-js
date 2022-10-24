@@ -1,12 +1,17 @@
-import React from "react";
+import { Container } from "react-bootstrap";
 import styles from "./Filter.module.css";
 
-function Filter(props) {
-  const { filter } = props;
-  const { setFilter } = props;
-
+function Filter({ filter, setFilter }) {
   return (
-    <div className={styles["filter-buttons"]}>
+    <Container fluid className={styles["filter"]}>
+      <div
+        onClick={setFilter.bind(null, "all")}
+        className={`${styles["filter-button"]} ${
+          filter === "all" ? styles["active-filter"] : ""
+        } `}
+      >
+        <s>All</s>
+      </div>
       <div
         onClick={setFilter.bind(null, "students")}
         className={`${styles["filter-button"]} ${
@@ -39,7 +44,7 @@ function Filter(props) {
       >
         Admins
       </div>
-    </div>
+    </Container>
   );
 }
 

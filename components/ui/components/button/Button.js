@@ -1,13 +1,11 @@
-import React from "react";
-
-function Button(props) {
+function Button({ children, type, classes, onClick }) {
   return (
     <button
-      className={`${props.className ? props.className : ""} ${props.classes}`}
-      type={props.type}
-      onClick={props.onClick}
+      type={type ? type : "button"}
+      className={classes ? `button ${classes}` : "button"}
+      onClick={onClick ? onClick : null}
     >
-      {props.text}
+      {children}
     </button>
   );
 }

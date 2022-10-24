@@ -4,125 +4,104 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 /* * font-family: 'Lato', sans-serif; */
 
-* {
-  margin: 0;
-  padding: 0;
-
-  font-size: 16px;
-  font-family: "Poppins", sans-serif;
-  box-sizing: border-box;
-}
-
-a {
-  text-decoration: none;
-  color: #fff;
-}
-
 :root {
   --primary-color: #1d1d1d;
-  --transparent-primary-color: #1d1d1de9;
+  --transparent-primary-color: #1d1d1de8;
   --secondary-color: #faed26;
   --transparent-secondary-color: #faed26e4;
   --silver-color: #d0d0d0;
+
+  --platinum-color: #dce1de;
+  --smoky-black: #121212;
 
   --bold: 900;
   --normal: 700;
   --light: 400;
 
-  --transition-speed: 0.5s;
+  --transition-speed: 0.4s;
   --transition-speed-responsive-mobile-menu: 1s;
 }
 
-body {
-  width: 100vw;
-  height: 100vh;
-  height: calc(var(--vh) * 100);
+* {
+  margin: 0;
 
-  overflow: hidden;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none !important;
+  color: #fff !important;
 }
 
 li {
   list-style: none;
 }
+button.button {
+  border: 2px solid #fffe;
 
-main#main {
-  display: block;
-  width: 100vw;
-  height: calc(var(--vh, 1vh) * 95);
+  background-color: var(--primary-color);
+  color: #fffe;
 
-  margin-bottom: calc(var(--vh, 1vh) * 5);
+  transition: all ease var(--transition-speed);
 }
-
-main#main {
-  line-height: 1.6;
-
-  overflow-x: hidden;
-}
-main#main::-webkit-scrollbar {
-  width: 0.25rem;
-}
-main#main::-webkit-scrollbar-track {
-  background: var(--primary-color);
-}
-main#main::-webkit-scrollbar-thumb {
-  background: var(--secondary-color);
+button.button:hover {
+  color: var(--primary-color);
+  background-color: #fffe;
 }
 
-.darkened-image {
-  filter: brightness(0.6);
-}
 .invisible {
   visibility: hidden;
 }
 .bold {
-  font-weight: var(--bold);  
+  font-weight: var(--bold);
 }
 
-.button {
-  background-color: var(--primary-color);
-  color: #fff;
-  border: 2px solid var(--primary-color);
-  transition: all ease var(--transition-speed);
-  cursor: pointer;
+.navbar-toggler {
+  box-shadow: none !important;
 }
-.button:hover {
-  background-color: #fff;
-  color: var(--primary-color);
-}
-.button--white {
-  background-color: var(--primary-color);
-  color: #fff;
-  border: 2px solid #fff;
-  transition: all ease var(--transition-speed);
-  cursor: pointer;
-}
-.button--white:hover {
-  background-color: #fff;
-  color: #000;
+.dropdown-toggle {
+  color: var(--secondary-color) !important;
 }
 
-.card {
-  display: grid;
-  place-items: center;
+@media only screen and (min-width: 300px) and (max-width: 480px) {
+  main#main {
+    display: block;
+    width: 100vw;
+    height: calc(var(--vh, 1vh) * 89);
 
-  width: 100%;
-  height: 100%;
-
-  border: 2px solid var(--primary-color);
-  border-radius: 12px;
+    margin-bottom: calc(var(--vh, 1vh) * 11);
+  }
+  main#main::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+  main#main::-webkit-scrollbar-track {
+    background: var(--primary-color);
+  }
+  main#main::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+  }
 }
+@media only screen and (min-width: 1201px) and (max-width: 1980px) {
+  main#main {
+    display: block;
+    width: 100vw;
+    height: calc(var(--vh, 1vh) * 95);
 
-.highlight--light {
-  box-shadow: 0 0 2px 2px #fffe;
-  border-color: var(--primary-color);
-}
-.highlight--dark {
-  box-shadow: 0 0 2px 4px var(--primary-color);
-  border-color: var(--silver-color);
-}
+    margin-top: calc(var(--vh, 1vh) * 5);
 
-.no-animation.no-animation {
-  animation: none;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+  main#main::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+  main#main::-webkit-scrollbar-track {
+    background: var(--primary-color);
+  }
+  main#main::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+  }
 }
 
 .scroll {
@@ -132,9 +111,19 @@ main#main::-webkit-scrollbar-thumb {
 .scroll::-webkit-scrollbar {
   width: 0.25rem;
 }
-.scroll::-webkit-scrollbar-track {
-  background: var(--primary-color);
+@media only screen and (min-width: 300px) and (max-width: 480px) {
+  .scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scroll::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
 }
-.scroll::-webkit-scrollbar-thumb {
-  background: var(--secondary-color);
+@media only screen and (min-width: 1201px) and (max-width: 1980px) {
+  .scroll::-webkit-scrollbar-track {
+    background: var(--primary-color);
+  }
+  .scroll::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+  }
 }

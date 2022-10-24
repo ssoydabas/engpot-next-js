@@ -1,14 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import authenticationSlice from "./authentication/authentication";
-import feedbackSlice from "./feedback/feedback";
-import teacherSlice from "./teacher/teacher";
+import authentication from "./authentication/authentication";
+import authForm from "./authentication/form";
+import feedback from "./feedback/Feedback";
 
 const store = configureStore({
   reducer: {
-    authentication: authenticationSlice.reducer,
-    feedback: feedbackSlice.reducer,
-    teacher: teacherSlice.reducer,
+    authentication: authentication.reducer,
+    authForm: authForm.reducer,
+    feedback: feedback.reducer,
   },
 });
 

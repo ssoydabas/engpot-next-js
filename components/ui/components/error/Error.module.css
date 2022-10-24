@@ -1,0 +1,69 @@
+@media only screen and (min-width: 300px) and (max-width: 480px) {
+    .error {
+      display: grid;
+      place-items: center;
+      grid-template-rows: 4fr 1fr;
+  
+      width: 80%;
+      height: calc(var(--vh, 1vh) * 40);
+  
+      margin: auto;
+      padding: 1% 2%;
+      border: 1px solid var(--silver-color);
+      border-radius: 8px;
+  
+      box-shadow: 0 0 20px 4px var(--primary-color);
+  
+      background-color: var(--primary-color);
+      color: #fffe;
+  
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+  
+      z-index: 100;
+    }
+    .text {
+      font-size: .8rem;
+    }
+  
+    .error > button {
+      width: 40%;
+      font-size: .8rem;
+    }
+  }
+  
+  @media only screen and (min-width: 1201px) and (max-width: 1980px) {
+    .error {
+      display: grid;
+      place-items: center;
+      grid-template-rows: 4fr 1fr;
+
+      width: 60%;
+      height: calc(var(--vh, 1vh) * 30);
+  
+      margin: auto;
+      padding: 1% 2%;
+      border: 1px solid var(--silver-color);
+      border-radius: 8px;
+  
+      box-shadow: 0 0 20px 4px var(--primary-color);
+  
+      background-color: var(--primary-color);
+      color: #fffe;
+  
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 100;
+    }
+  
+    .error > button {
+      width: 20%;
+    }
+  }
+  

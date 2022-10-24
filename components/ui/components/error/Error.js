@@ -1,19 +1,20 @@
 import React from "react";
-import styles from "../../styles/Error.module.css";
+import styles from "./Error.module.css";
 
+import Backdrop from "../backdrop/Backdrop";
 import Button from "../button/Button";
 
-function Error(props) {
+function Error({ text, onClick }) {
   return (
-    <div className={styles["error"]}>
-      <div className={styles["text"]}>{props.text}</div>
-      <Button
-        classes="button--white"
-        type="button"
-        text="Okay"
-        onClick={props.onClick}
-      />
-    </div>
+    <>
+      <Backdrop onClick={onClick} level={"index-10"} />
+      <div className={styles["error"]}>
+        <div className={styles["text"]}>{text}</div>
+        <Button type="button" onClick={onClick}>
+          Okay
+        </Button>
+      </div>
+    </>
   );
 }
 
