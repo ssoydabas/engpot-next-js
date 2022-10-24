@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { authenticationActions } from "../../../store/authentication/authentication.js";
 import { authFormActions } from "../../../store/authentication/form.js";
-import { feedbackActions } from "../../../store/feedback/Feedback.js";
+import { feedbackActions } from "../../../store/feedback/feedback.js";
 
 import useHttp from "../../../hooks/useHttp.js";
 import useWindowDimensions from "../../../hooks/useWindowDimensions.js";
