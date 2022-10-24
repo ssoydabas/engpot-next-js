@@ -2,7 +2,7 @@ import { useRef } from "react";
 import styles from "./LessonActions.module.css";
 
 import { useDispatch } from "react-redux";
-import { feedbackActions } from "../../../../../store/feedback/Feedback.js";
+import { feedbackActions } from "../../../../../store/feedback/feedback.js";
 
 import ISO_to_Object from "../../../../../util/ISO_to_Obj.js";
 

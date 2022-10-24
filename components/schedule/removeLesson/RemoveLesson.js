@@ -1,7 +1,7 @@
 import styles from "./RemoveLesson.module.css";
 
 import { useDispatch } from "react-redux";
-import { feedbackActions } from "../../../store/feedback/Feedback.js";
+import { feedbackActions } from "../../../store/feedback/feedback.js";
 
 import Form from "react-bootstrap/Form";
 

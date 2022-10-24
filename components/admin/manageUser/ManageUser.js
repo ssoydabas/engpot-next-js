@@ -2,7 +2,7 @@ import { useRef } from "react";
 import styles from "./ManageUser.module.css";
 
 import { useSelector, useDispatch } from "react-redux";
-import { feedbackActions } from "../../../store/feedback/Feedback.js";
+import { feedbackActions } from "../../../store/feedback/feedback.js";
 
 import useWindowDimensions from "../../../hooks/useWindowDimensions.js";
 

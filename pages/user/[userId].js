@@ -7,7 +7,7 @@ import Head from "next/head";
 import { useDispatch, useSelector } from "react-redux";
 import { authenticationActions } from "../../store/authentication/authentication.js";
 import { authFormActions } from "../../store/authentication/form.js";
-import { feedbackActions } from "../../store/feedback/Feedback.js";
+import { feedbackActions } from "../../store/feedback/feedback.js";
 
 import useHttp from "../../hooks/useHttp.js";
 

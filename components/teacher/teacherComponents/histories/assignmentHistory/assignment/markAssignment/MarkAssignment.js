@@ -2,7 +2,7 @@ import { useRef } from "react";
 import styles from "./MarkAssignment.module.css";
 
 import { useDispatch } from "react-redux";
-import { feedbackActions } from "../../../../../../../store/feedback/Feedback.js";
+import { feedbackActions } from "../../../../../../../store/feedback/feedback.js";
 
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";

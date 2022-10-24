@@ -3,7 +3,7 @@ import styles from "./ResendConfirmation.module.css";
 
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
-import { feedbackActions } from "../../../store/feedback/Feedback.js";
+import { feedbackActions } from "../../../store/feedback/feedback.js";
 
 import useHttp from "../../../hooks/useHttp.js";
 

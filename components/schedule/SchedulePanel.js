@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./SchedulePanel.module.css";
 
 import { useDispatch } from "react-redux";
-import { feedbackActions } from "../../store/feedback/Feedback.js";
+import { feedbackActions } from "../../store/feedback/feedback.js";
 
 import FullCalendar from "@fullcalendar/react";
 import interactionPlugin from "@fullcalendar/interaction";

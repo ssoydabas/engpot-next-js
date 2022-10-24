@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 
 import { useDispatch } from "react-redux";
-import { feedbackActions } from "../../../../store/feedback/Feedback.js";
+import { feedbackActions } from "../../../../store/feedback/feedback.js";
 
 import Button from "../../../ui/components/button/Button.js";
 
