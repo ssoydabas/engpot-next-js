@@ -2,16 +2,16 @@ import { useEffect, useState } from "react";
 
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
-import { feedbackActions } from "../../store/feedback/Feedback";
+import { feedbackActions } from "../../store/feedback/Feedback.js";
 
-import useHttp from "../../hooks/useHttp";
+import useHttp from "../../hooks/useHttp.js";
 
-import useWindowDimensions from "../../hooks/useWindowDimensions";
+import useWindowDimensions from "../../hooks/useWindowDimensions.js";
 
-import SchedulePanel from "../../components/schedule/SchedulePanel";
+import SchedulePanel from "../../components/schedule/SchedulePanel.js";
 
-import Error from "../../components/ui/components/error/Error";
-import LoadingSpinner from "../../components/ui/components/loadingSpinner/LoadingSpinner";
+import Error from "../../components/ui/components/error/Error.js";
+import LoadingSpinner from "../../components/ui/components/loadingSpinner/LoadingSpinner.js";
 
 function Schedule() {
   const router = useRouter();

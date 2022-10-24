@@ -5,12 +5,12 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 import Phone from "../../../../public/svg/Phone.js";
-import Email from "../../../../public/svg/Email";
+import Email from "../../../../public/svg/Email.js";
 import Location from "../../../../public/svg/Location.js";
 
-import GitHub from "../../../../public/sertan/socialMedia/GitHub"
-import Instagram from "../../../../public/sertan/socialMedia/Instagram"
-import LinkedIn from "../../../../public/sertan/socialMedia/LinkedIn"
+import GitHub from "../../../../public/sertan/socialMedia/GitHub.js"
+import Instagram from "../../../../public/sertan/socialMedia/Instagram.js"
+import LinkedIn from "../../../../public/sertan/socialMedia/LinkedIn.js"
 
 import Teach from "../../../../public/svg/Teach.js";
 import Google from "../../../../public/svg/Google.js";

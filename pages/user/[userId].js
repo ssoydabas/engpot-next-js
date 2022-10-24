@@ -5,16 +5,16 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 
 import { useDispatch, useSelector } from "react-redux";
-import { authenticationActions } from "../../store/authentication/authentication";
-import { authFormActions } from "../../store/authentication/form";
-import { feedbackActions } from "../../store/feedback/Feedback";
+import { authenticationActions } from "../../store/authentication/authentication.js";
+import { authFormActions } from "../../store/authentication/form.js";
+import { feedbackActions } from "../../store/feedback/Feedback.js";
 
-import useHttp from "../../hooks/useHttp";
+import useHttp from "../../hooks/useHttp.js";
 
-import User from "../../components/user/User";
+import User from "../../components/user/User.js";
 
-import Error from "../../components/ui/components/error/Error";
-import LoadingSpinner from "../../components/ui/components/loadingSpinner/LoadingSpinner";
+import Error from "../../components/ui/components/error/Error.js";
+import LoadingSpinner from "../../components/ui/components/loadingSpinner/LoadingSpinner.js";
 
 function UserProfileById() {
   const router = useRouter();

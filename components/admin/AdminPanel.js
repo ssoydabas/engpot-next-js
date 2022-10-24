@@ -3,9 +3,9 @@ import styles from "./AdminPanel.module.css";
 
 import Container from "react-bootstrap/Container";
 
-import Filter from "./filter/Filter";
-import UsersList from "./usersList/UsersList";
-import ManageUser from "./manageUser/ManageUser";
+import Filter from "./filter/Filter.js";
+import UsersList from "./usersList/UsersList.js";
+import ManageUser from "./manageUser/ManageUser.js";
 
 const classifyUsers = (usersFromApi) => {
   const students = [];

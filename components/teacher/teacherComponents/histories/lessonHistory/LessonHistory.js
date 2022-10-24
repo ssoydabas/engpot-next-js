@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./LessonHistory.module.css";
 
-import ISO_to_Object from "../../../../../util/ISO_to_Obj";
+import ISO_to_Object from "../../../../../util/ISO_to_Obj.js";
 import Container from "react-bootstrap/Container";
 
 function LessonHistory({ teacher, selectedStudent, http }) {

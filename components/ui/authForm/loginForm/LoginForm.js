@@ -3,8 +3,8 @@ import styles from "./LoginForm.module.css";
 
 import Form from "react-bootstrap/Form";
 
-import ForgotPasswordForm from "./forgotPasswordForm/ForgotPasswordForm";
-import Button from "../../components/button/Button";
+import ForgotPasswordForm from "./forgotPasswordForm/ForgotPasswordForm.js";
+import Button from "../../components/button/Button.js";
 
 function LoginForm({
   changeFormModeHandler,

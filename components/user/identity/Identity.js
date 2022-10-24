@@ -5,8 +5,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 
-import Gear from "../../../public/svg/Gear";
-import Button from "../../ui/components/button/Button";
+import Gear from "../../../public/svg/Gear.js";
+import Button from "../../ui/components/button/Button.js";
 
 function Identity({ user, changeNameRequest, passwordChangeRequest }) {
   const [editMode, setEditMode] = useState(false);

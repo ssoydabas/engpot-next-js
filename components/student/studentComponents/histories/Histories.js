@@ -3,8 +3,8 @@ import styles from "./Histories.module.css";
 
 import Container from "react-bootstrap/Container";
 
-import LessonHistory from "./lessonHistory/LessonHistory";
-import AssignmentHistory from "./assignmentHistory/AssignmentHistory";
+import LessonHistory from "./lessonHistory/LessonHistory.js";
+import AssignmentHistory from "./assignmentHistory/AssignmentHistory.js";
 
 function Histories({
   student,

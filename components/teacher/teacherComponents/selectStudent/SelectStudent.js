@@ -4,8 +4,8 @@ import styles from "./SelectStudent.module.css";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 
-import Backdrop from "../../../ui/components/backdrop/Backdrop";
-import Exit from "../../../../public/svg/Exit";
+import Backdrop from "../../../ui/components/backdrop/Backdrop.js";
+import Exit from "../../../../public/svg/Exit.js";
 
 function SelectStudent({
   students,

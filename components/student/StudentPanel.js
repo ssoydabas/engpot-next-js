@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import styles from "./StudentPanel.module.css";
 
-import useWindowDimensions from "../../hooks/useWindowDimensions";
+import useWindowDimensions from "../../hooks/useWindowDimensions.js";
 
 import Container from "react-bootstrap/Container";
 
-import StudentMenu from "./studentComponents/studentMenu/StudentMenu";
-import NextLesson from "./studentComponents/nextLesson/NextLesson";
-import Histories from "./studentComponents/histories/Histories";
-import Statistics from "./studentComponents/statistics/Statistics";
+import StudentMenu from "./studentComponents/studentMenu/StudentMenu.js";
+import NextLesson from "./studentComponents/nextLesson/NextLesson.js";
+import Histories from "./studentComponents/histories/Histories.js";
+import Statistics from "./studentComponents/statistics/Statistics.js";
 
 function StudentPanel({
   student,

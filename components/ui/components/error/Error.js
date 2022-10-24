@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./Error.module.css";
 
-import Backdrop from "../backdrop/Backdrop";
-import Button from "../button/Button";
+import Backdrop from "../backdrop/Backdrop.js";
+import Button from "../button/Button.js";
 
 function Error({ text, onClick }) {
   return (

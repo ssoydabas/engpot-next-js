@@ -3,13 +3,13 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 
 import { useDispatch } from "react-redux";
-import { authFormActions } from "../../../store/authentication/form";
-import { feedbackActions } from "../../../store/feedback/Feedback";
+import { authFormActions } from "../../../store/authentication/form.js";
+import { feedbackActions } from "../../../store/feedback/Feedback.js";
 
-import useHttp from "../../../hooks/useHttp";
+import useHttp from "../../../hooks/useHttp.js";
 
-import LoadingSpinner from "../../../components/ui/components/loadingSpinner/LoadingSpinner";
-import Error from "../../../components/ui/components/error/Error";
+import LoadingSpinner from "../../../components/ui/components/loadingSpinner/LoadingSpinner.js";
+import Error from "../../../components/ui/components/error/Error.js";
 
 function ConfirmAccount() {
   const dispatch = useDispatch();

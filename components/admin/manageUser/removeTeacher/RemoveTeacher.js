@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
 import { useDispatch } from "react-redux";
-import { feedbackActions } from "../../../../store/feedback/Feedback";
+import { feedbackActions } from "../../../../store/feedback/Feedback.js";
 
-import Button from "../../../ui/components/button/Button";
+import Button from "../../../ui/components/button/Button.js";
 
 function RemoveTeacher({
   userToManage,

@@ -1,19 +1,19 @@
 import { useSelector } from "react-redux";
 
 import { useDispatch } from "react-redux";
-import { authenticationActions } from "../../../store/authentication/authentication";
-import { authFormActions } from "../../../store/authentication/form";
-import { feedbackActions } from "../../../store/feedback/Feedback";
+import { authenticationActions } from "../../../store/authentication/authentication.js";
+import { authFormActions } from "../../../store/authentication/form.js";
+import { feedbackActions } from "../../../store/feedback/Feedback.js";
 
-import useHttp from "../../../hooks/useHttp";
-import useWindowDimensions from "../../../hooks/useWindowDimensions";
+import useHttp from "../../../hooks/useHttp.js";
+import useWindowDimensions from "../../../hooks/useWindowDimensions.js";
 
-import Error from "../components/error/Error";
-import LoadingSpinner from "../components/loadingSpinner/LoadingSpinner";
-import Feedback from "../components/feedback/Feedback";
+import Error from "../components/error/Error.js";
+import LoadingSpinner from "../components/loadingSpinner/LoadingSpinner.js";
+import Feedback from "../components/feedback/Feedback.js";
 
-import Navigation from "../navigation/Navigation";
-import AuthForm from "../authForm/AuthForm";
+import Navigation from "../navigation/Navigation.js";
+import AuthForm from "../authForm/AuthForm.js";
 
 function Layout({ children }) {
   const dispatch = useDispatch();

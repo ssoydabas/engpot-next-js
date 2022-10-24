@@ -2,16 +2,16 @@ import { useState, useEffect } from "react";
 
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
-import { feedbackActions } from "../../store/feedback/Feedback";
+import { feedbackActions } from "../../store/feedback/Feedback.js";
 
-import useHttp from "../../hooks/useHttp";
+import useHttp from "../../hooks/useHttp.js";
 
 import Head from "next/head";
 
-import StudentPanel from "../../components/student/StudentPanel";
+import StudentPanel from "../../components/student/StudentPanel.js";
 
-import Error from "../../components/ui/components/error/Error";
-import LoadingSpinner from "../../components/ui/components/loadingSpinner/LoadingSpinner";
+import Error from "../../components/ui/components/error/Error.js";
+import LoadingSpinner from "../../components/ui/components/loadingSpinner/LoadingSpinner.js";
 
 function Student() {
   const router = useRouter();

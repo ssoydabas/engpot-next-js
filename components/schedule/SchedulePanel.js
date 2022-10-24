@@ -2,14 +2,14 @@ import { useState } from "react";
 import styles from "./SchedulePanel.module.css";
 
 import { useDispatch } from "react-redux";
-import { feedbackActions } from "../../store/feedback/Feedback";
+import { feedbackActions } from "../../store/feedback/Feedback.js";
 
 import FullCalendar from "@fullcalendar/react";
 import interactionPlugin from "@fullcalendar/interaction";
 import timeGridPlugin from "@fullcalendar/timegrid";
 
-import AddLesson from "./addLesson/AddLesson";
-import RemoveLesson from "./removeLesson/RemoveLesson";
+import AddLesson from "./addLesson/AddLesson.js";
+import RemoveLesson from "./removeLesson/RemoveLesson.js";
 
 function SchedulePanel({ teacher, setTeacher, teacherSchedule, http }) {
   const dispatch = useDispatch();

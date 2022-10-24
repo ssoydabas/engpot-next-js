@@ -2,7 +2,7 @@ import styles from "./User.module.css";
 
 import Container from "react-bootstrap/Container";
 
-import Identity from "./identity/Identity";
+import Identity from "./identity/Identity.js";
 
 function User({
   user,

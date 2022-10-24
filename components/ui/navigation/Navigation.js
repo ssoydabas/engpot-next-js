@@ -10,10 +10,10 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
-import MenuItem from "./menuItem/MenuItem";
-import constructNavLinks from "../../../util/constructNavLinks";
+import MenuItem from "./menuItem/MenuItem.js";
+import constructNavLinks from "../../../util/constructNavLinks.js";
 
-import Button from "../components/button/Button";
+import Button from "../components/button/Button.js";
 
 function Navigation({
   authentication,

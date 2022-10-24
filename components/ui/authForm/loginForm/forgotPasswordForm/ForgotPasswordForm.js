@@ -3,7 +3,7 @@ import styles from "./ForgotPasswordForm.module.css";
 
 import Form from "react-bootstrap/Form";
 
-import Button from "../../../components/button/Button";
+import Button from "../../../components/button/Button.js";
 
 function ForgotPasswordForm({ setFormData, forgotPasswordRequest }) {
   const passwordResetEmailRef = useRef();

@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 import Phone from "../../../../public/svg/Phone.js";
-import Email from "../../../../public/svg/Email";
+import Email from "../../../../public/svg/Email.js";
 import Location from "../../../../public/svg/Location.js";
 
 import Classroom from "../../../../public/svg/Classroom.js";

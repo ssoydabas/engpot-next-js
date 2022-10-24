@@ -2,7 +2,7 @@ import styles from "./NextLesson.module.css";
 
 import Container from "react-bootstrap/Container";
 
-import ISO_to_Obj from "../../../../util/ISO_to_Obj";
+import ISO_to_Obj from "../../../../util/ISO_to_Obj.js";
 
 function NextLesson({ student }) {
   if (

@@ -4,8 +4,8 @@ import { useState } from "react";
 
 import Container from "react-bootstrap/Container";
 
-import Engpot from "./engpot/Engpot";
-import Sertan from "./sertan/Sertan";
+import Engpot from "./engpot/Engpot.js";
+import Sertan from "./sertan/Sertan.js";
 
 function About() {
   const [about, setAbout] = useState("engpot");

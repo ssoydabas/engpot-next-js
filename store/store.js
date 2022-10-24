@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import authentication from "./authentication/authentication";
-import authForm from "./authentication/form";
-import feedback from "./feedback/Feedback";
+import authentication from "./authentication/authentication.js";
+import authForm from "./authentication/form.js";
+import feedback from "./feedback/Feedback.js";
 
 const store = configureStore({
   reducer: {

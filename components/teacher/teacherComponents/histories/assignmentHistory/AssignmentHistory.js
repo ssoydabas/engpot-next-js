@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import styles from "./AssignmentHistory.module.css";
 
-import ISO_to_Obj from "../../../../../util/ISO_to_Obj";
+import ISO_to_Obj from "../../../../../util/ISO_to_Obj.js";
 import Container from "react-bootstrap/Container";
 
-import Assignment from "./assignment/Assignment";
+import Assignment from "./assignment/Assignment.js";
 
 function AssignmentHistory({ teacher, selectedStudent, http, isMobile }) {
   const [assignmentHistory, setAssignmentHistory] = useState(null);

@@ -1,14 +1,14 @@
 import styles from "./RemoveLesson.module.css";
 
 import { useDispatch } from "react-redux";
-import { feedbackActions } from "../../../store/feedback/Feedback";
+import { feedbackActions } from "../../../store/feedback/Feedback.js";
 
 import Form from "react-bootstrap/Form";
 
-import Backdrop from "../../ui/components/backdrop/Backdrop";
-import Button from "../../ui/components/button/Button";
+import Backdrop from "../../ui/components/backdrop/Backdrop.js";
+import Button from "../../ui/components/button/Button.js";
 
-import ISO_to_Obj from "../../../util/ISO_to_Obj";
+import ISO_to_Obj from "../../../util/ISO_to_Obj.js";
 
 function RemoveLesson({
   teacher,

@@ -3,16 +3,16 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
 import { useDispatch } from "react-redux";
-import { feedbackActions } from "../../store/feedback/Feedback";
+import { feedbackActions } from "../../store/feedback/Feedback.js";
 
-import useHttp from "../../hooks/useHttp";
+import useHttp from "../../hooks/useHttp.js";
 
 import Head from "next/head";
 
-import AdminPanel from "../../components/admin/AdminPanel";
+import AdminPanel from "../../components/admin/AdminPanel.js";
 
-import LoadingSpinner from "../../components/ui/components/loadingSpinner/LoadingSpinner";
-import Error from "../../components/ui/components/error/Error";
+import LoadingSpinner from "../../components/ui/components/loadingSpinner/LoadingSpinner.js";
+import Error from "../../components/ui/components/error/Error.js";
 
 function Admin(props) {
   const router = useRouter();
@@ -74,9 +74,7 @@ function Admin(props) {
         />
       </Head>
       {isLoading && <LoadingSpinner />}
-      {httpError && (
-        <Error text={httpError} onClick={closeErrorMessage} />
-      )}
+      {httpError && <Error text={httpError} onClick={closeErrorMessage} />}
       {users && (
         <AdminPanel
           users={users}
@@ -92,17 +90,17 @@ function Admin(props) {
 export default Admin;
 
 export async function getStaticProps(context) {
-    let response = await fetch(`${process.env.API_URL}/fetchAllUsers/all`);
-    response = await response.json();
-  
-    const { users } = response;
-  
-    return {
-      props: {
-        users,
-      },
-    };
-  }
+  let response = await fetch(`${process.env.API_URL}/fetchAllUsers/all`);
+  response = await response.json();
+
+  const { users } = response;
+
+  return {
+    props: {
+      users,
+    },
+  };
+}
 
 // export async function getServerSideProps(context) {
 //   let response = await fetch(`${process.env.API_URL}/fetchAllUsers/all`);
@@ -116,4 +114,3 @@ export async function getStaticProps(context) {
 //     },
 //   };
 // }
-  

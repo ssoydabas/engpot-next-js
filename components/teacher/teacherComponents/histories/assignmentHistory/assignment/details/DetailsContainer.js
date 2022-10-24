@@ -1,10 +1,10 @@
 import { useState } from "react";
 import styles from "./DetailsContainer.module.css";
 
-import Backdrop from "../../../../../../ui/components/backdrop/Backdrop";
-import Button from "../../../../../../ui/components/button/Button";
+import Backdrop from "../../../../../../ui/components/backdrop/Backdrop.js";
+import Button from "../../../../../../ui/components/button/Button.js";
 
-import MarkAssignment from "../markAssignment/MarkAssignment";
+import MarkAssignment from "../markAssignment/MarkAssignment.js";
 
 function DetailsContainer({
   assignment,

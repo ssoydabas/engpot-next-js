@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import Home from "../components/home/Home";
+import Home from "../components/home/Home.js";
 
 function Homepage() {
   return (

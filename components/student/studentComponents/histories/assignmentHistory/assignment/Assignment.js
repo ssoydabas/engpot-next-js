@@ -3,11 +3,11 @@ import styles from "./Assignment.module.css";
 
 import Form from "react-bootstrap/Form";
 
-import DetailsContainer from "./details/DetailsContainer";
-import DoAssignment from "./doAssignment/DoAssignment";
+import DetailsContainer from "./details/DetailsContainer.js";
+import DoAssignment from "./doAssignment/DoAssignment.js";
 
-import Backdrop from "../../../../../ui/components/backdrop/Backdrop";
-import Button from "../../../../../ui/components/button/Button";
+import Backdrop from "../../../../../ui/components/backdrop/Backdrop.js";
+import Button from "../../../../../ui/components/button/Button.js";
 
 function Assignment({
   student,

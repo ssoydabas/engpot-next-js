@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-import LoginForm from "./loginForm/LoginForm";
-import SignUpForm from "./signUpForm/SignUpForm";
+import LoginForm from "./loginForm/LoginForm.js";
+import SignUpForm from "./signUpForm/SignUpForm.js";
 
-import Backdrop from "../components/backdrop/Backdrop";
+import Backdrop from "../components/backdrop/Backdrop.js";
 
 function AuthForm({
   formMode,

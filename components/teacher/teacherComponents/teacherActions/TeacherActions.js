@@ -2,10 +2,10 @@ import styles from "./TeacherActions.module.css";
 
 import Container from "react-bootstrap/Container";
 
-import Backdrop from "../../../ui/components/backdrop/Backdrop";
+import Backdrop from "../../../ui/components/backdrop/Backdrop.js";
 
-import LessonActions from "./lessonActions/LessonActions";
-import AssignmentAction from "./assignmentActions/AssignmentAction";
+import LessonActions from "./lessonActions/LessonActions.js";
+import AssignmentAction from "./assignmentActions/AssignmentAction.js";
 
 function TeacherActions({
   teacher,

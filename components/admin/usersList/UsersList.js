@@ -2,7 +2,7 @@ import styles from "./UsersList.module.css";
 
 import Container from "react-bootstrap/Container";
 
-import UserItem from "./userItem/UserItem";
+import UserItem from "./userItem/UserItem.js";
 
 function UsersList({ classifiedUsers, filter, setUserToManage }) {
   const { students } = classifiedUsers;

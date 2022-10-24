@@ -6,7 +6,7 @@ import Link from "next/link";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 
-import Button from "../../components/button/Button";
+import Button from "../../components/button/Button.js";
 
 function SignUpForm({
   toggleFormDisplayHandler,

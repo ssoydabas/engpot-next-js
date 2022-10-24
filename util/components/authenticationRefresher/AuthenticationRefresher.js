@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 import { useDispatch } from "react-redux";
-import { authenticationActions } from "../../../store/authentication/authentication";
+import { authenticationActions } from "../../../store/authentication/authentication.js";
 
 function AuthenticationRefresher({ children }) {
   const dispatch = useDispatch();

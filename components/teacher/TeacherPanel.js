@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import styles from "./TeacherPanel.module.css";
 
-import useWindowDimensions from "../../hooks/useWindowDimensions";
+import useWindowDimensions from "../../hooks/useWindowDimensions.js";
 
 import Container from "react-bootstrap/Container";
 
-import StudentSelect from "./teacherComponents/selectStudent/SelectStudent";
-import TeacherMenu from "./teacherComponents/teacherMenu/TeacherMenu";
-import NextLesson from "./teacherComponents/nextLesson/NextLesson";
-import Histories from "./teacherComponents/histories/Histories";
-import TeacherActions from "./teacherComponents/teacherActions/TeacherActions";
+import StudentSelect from "./teacherComponents/selectStudent/SelectStudent.js";
+import TeacherMenu from "./teacherComponents/teacherMenu/TeacherMenu.js";
+import NextLesson from "./teacherComponents/nextLesson/NextLesson.js";
+import Histories from "./teacherComponents/histories/Histories.js";
+import TeacherActions from "./teacherComponents/teacherActions/TeacherActions.js";
 
 function TeacherPanel({ teacher, students, fetchStudents, http }) {
   const [isMobile, setIsMobile] = useState(true);

@@ -7,11 +7,11 @@ import "@fullcalendar/timegrid/main.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { Provider } from "react-redux";
-import store from "../store/store";
-import AuthenticationRefresher from "../util/components/authenticationRefresher/AuthenticationRefresher";
+import store from "../store/store.js";
+import AuthenticationRefresher from "../util/components/authenticationRefresher/AuthenticationRefresher.js";
 import SSRProvider from "react-bootstrap/SSRProvider";
 
-import Layout from "../components/ui/layout/Layout";
+import Layout from "../components/ui/layout/Layout.js";
 
 function MyApp({ Component, pageProps }) {
   return (

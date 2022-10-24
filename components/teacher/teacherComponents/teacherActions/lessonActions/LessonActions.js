@@ -2,13 +2,13 @@ import { useRef } from "react";
 import styles from "./LessonActions.module.css";
 
 import { useDispatch } from "react-redux";
-import { feedbackActions } from "../../../../../store/feedback/Feedback";
+import { feedbackActions } from "../../../../../store/feedback/Feedback.js";
 
-import ISO_to_Object from "../../../../../util/ISO_to_Obj";
+import ISO_to_Object from "../../../../../util/ISO_to_Obj.js";
 
 import Form from "react-bootstrap/Form";
 
-import Button from "../../../../ui/components/button/Button";
+import Button from "../../../../ui/components/button/Button.js";
 
 function LessonActions({
   teacher,

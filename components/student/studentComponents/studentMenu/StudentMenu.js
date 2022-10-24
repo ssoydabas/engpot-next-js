@@ -4,9 +4,9 @@ import styles from "./StudentMenu.module.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
-import Button from "../../../ui/components/button/Button";
+import Button from "../../../ui/components/button/Button.js";
 
-import SingleGear from "../../../../public/svg/SingleGear";
+import SingleGear from "../../../../public/svg/SingleGear.js";
 
 function StudentMenu({ student, historyMode, toggleHistoryMode, setDisplayStatistics }) {
   const [noAnimation, setNoAnimation] = useState(true);

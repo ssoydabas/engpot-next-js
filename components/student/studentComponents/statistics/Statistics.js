@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 
-import Backdrop from "../../../ui/components/backdrop/Backdrop";
+import Backdrop from "../../../ui/components/backdrop/Backdrop.js";
 
 function Statistics({ student, setDisplayStatistics, isMobile }) {
   return (

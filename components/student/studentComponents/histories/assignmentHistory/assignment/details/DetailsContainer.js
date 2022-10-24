@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./DetailsContainer.module.css";
 
-import Backdrop from "../../../../../../ui/components/backdrop/Backdrop";
+import Backdrop from "../../../../../../ui/components/backdrop/Backdrop.js";
 
 function DetailsContainer({ assignment, setShowDetails }) {
   const [detailMode, setDetailMode] = useState("studentAnswer");

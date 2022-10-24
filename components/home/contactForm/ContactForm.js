@@ -7,7 +7,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 
-import Button from "../../ui/components/button/Button";
+import Button from "../../ui/components/button/Button.js";
 
 function ContactForm() {
   return (

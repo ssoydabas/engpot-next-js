@@ -2,20 +2,20 @@ import { useRef } from "react";
 import styles from "./ManageUser.module.css";
 
 import { useSelector, useDispatch } from "react-redux";
-import { feedbackActions } from "../../../store/feedback/Feedback";
+import { feedbackActions } from "../../../store/feedback/Feedback.js";
 
-import useWindowDimensions from "../../../hooks/useWindowDimensions";
+import useWindowDimensions from "../../../hooks/useWindowDimensions.js";
 
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 
-import RemoveTeacher from "./removeTeacher/RemoveTeacher";
-import AssignStudent from "./assignStudent/AssignStudent";
+import RemoveTeacher from "./removeTeacher/RemoveTeacher.js";
+import AssignStudent from "./assignStudent/AssignStudent.js";
 
-import Backdrop from "../../ui/components/backdrop/Backdrop";
-import Button from "../../ui/components/button/Button";
+import Backdrop from "../../ui/components/backdrop/Backdrop.js";
+import Button from "../../ui/components/button/Button.js";
 
-import Exit from "../../../public/svg/Exit";
+import Exit from "../../../public/svg/Exit.js";
 
 function ManageUser({
   classifiedUsers,
