@@ -15,7 +15,6 @@ import Layout from "../components/ui/layout/Layout.js";
 
 function MyApp({ Component, pageProps }) {
 
-  console.log(process.env);
   return (
     <Provider store={store}>
       <AuthenticationRefresher>
