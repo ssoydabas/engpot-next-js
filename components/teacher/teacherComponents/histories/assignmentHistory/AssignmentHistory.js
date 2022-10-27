@@ -11,7 +11,9 @@ function AssignmentHistory({ teacher, selectedStudent, http, isMobile }) {
   const [showAssignment, setShowAssignment] = useState(null);
 
   const fetchAssignmentHistoryHandler = () => {
-    const url = new URL(`${process.env.API_URL}/getAssignmentHistory`);
+    const url = new URL(
+      `${process.env.API_URL}/v1/student/fetchAssignmentHistory`
+    );
     url.searchParams.append("teacherId", teacher._id);
     url.searchParams.append("studentId", selectedStudent._id);
 
@@ -23,9 +25,8 @@ function AssignmentHistory({ teacher, selectedStudent, http, isMobile }) {
       },
     };
 
-    const dataProcessingLogic = (data) => {
+    const dataProcessingLogic = ({ assignmentHistory }) => {
       http.setIsLoading(false);
-      const { assignmentHistory } = data;
       assignmentHistory = assignmentHistory.map((assignment) => {
         const deadlineDateObject = ISO_to_Obj(
           assignment.assignmentInfo.deadline

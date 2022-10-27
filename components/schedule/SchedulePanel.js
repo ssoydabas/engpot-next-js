@@ -41,7 +41,6 @@ function SchedulePanel({ teacher, setTeacher, teacherSchedule, http }) {
 
     const data = {
       userId: teacher._id,
-      action: "dragDrop",
       event: {
         id: newEventId,
         title: event.title,
@@ -50,7 +49,7 @@ function SchedulePanel({ teacher, setTeacher, teacherSchedule, http }) {
       },
     };
     const requestConfig = {
-      url: `${process.env.API_URL}/publicSchedule/update`,
+      url: `${process.env.API_URL}/v1/schedule/updateSchedule/edit`,
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -58,9 +57,8 @@ function SchedulePanel({ teacher, setTeacher, teacherSchedule, http }) {
       },
       body: data,
     };
-    const dataProcessingLogic = (data) => {
+    const dataProcessingLogic = ({ message }) => {
       http.setIsLoading(false);
-      const { message } = data;
       dispatch(feedbackActions.setMessage(message));
       setAddLesson(null);
       setTeacher({ ...teacher });

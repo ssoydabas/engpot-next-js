@@ -41,17 +41,16 @@ function RemoveLesson({
     };
 
     const requestConfig = {
-      url: `${process.env.API_URL}/publicSchedule/update`,
-      method: "POST",
+      url: `${process.env.API_URL}/v1/schedule/updateSchedule/remove`,
+      method: "DELETE",
       headers: {
         "content-type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("authenticationToken")}`,
       },
       body: data,
     };
-    const dataProcessingLogic = (data) => {
+    const dataProcessingLogic = ({ message }) => {
       http.setIsLoading(false);
-      const { message } = data;
       dispatch(feedbackActions.setMessage(message));
       setRemoveLesson(null);
       setTeacher({ ...teacher });

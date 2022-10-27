@@ -8,7 +8,7 @@ function LessonHistory({ teacher, selectedStudent, http }) {
   let [lessonHistory, setLessonHistory] = useState();
 
   const fetchLessonHistoryHandler = () => {
-    const url = new URL(`${process.env.API_URL}/getLessonHistory`);
+    const url = new URL(`${process.env.API_URL}/v1/student/fetchLessonHistory`);
     url.searchParams.append("teacherId", teacher._id);
     url.searchParams.append("studentId", selectedStudent._id);
 
@@ -20,9 +20,8 @@ function LessonHistory({ teacher, selectedStudent, http }) {
       },
     };
 
-    const dataProcessingLogic = (data) => {
+    const dataProcessingLogic = ({ lessonHistory }) => {
       http.setIsLoading(false);
-      const { lessonHistory } = data;
       lessonHistory = lessonHistory.map((lesson) => {
         const dateObject = ISO_to_Object(lesson.date);
 

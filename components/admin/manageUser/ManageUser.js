@@ -74,7 +74,7 @@ function ManageUser({
       adminId: authentication.user._id,
     };
     const requestConfig = {
-      url: `${process.env.API_URL}/editUserInfo`,
+      url: `${process.env.API_URL}/v1/admin/editUserInformation`,
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -82,9 +82,8 @@ function ManageUser({
       },
       body: data,
     };
-    const dataProcessingLogic = async (data) => {
+    const dataProcessingLogic = async ({ message }) => {
       http.setIsLoading(false);
-      const { message } = data;
       dispatch(feedbackActions.setMessage(message));
       setUserToManage(false);
       refreshUsersHandler();

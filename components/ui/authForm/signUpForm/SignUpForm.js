@@ -18,7 +18,7 @@ function SignUpForm({
   const surnameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
-  const confirmPasswordRef = useRef();
+  const passwordConfirmRef = useRef();
 
   const formDataHandler = () => {
     setFormData({
@@ -26,7 +26,7 @@ function SignUpForm({
       surname: surnameRef.current.value,
       email: emailRef.current.value,
       password: passwordRef.current.value,
-      confirmPassword: confirmPasswordRef.current.value,
+      passwordConfirm: passwordConfirmRef.current.value,
     });
   };
 
@@ -74,7 +74,7 @@ function SignUpForm({
           <Form.Control
             type="password"
             minLength="6"
-            ref={confirmPasswordRef}
+            ref={passwordConfirmRef}
             onChange={formDataHandler}
           />
         </Form.Group>
@@ -87,7 +87,7 @@ function SignUpForm({
           Already a User?
         </div>
         <div onClick={toggleFormDisplayHandler}>
-          <Link href={"/userProfile/resendConfirmation"}>
+          <Link href={"/user/resendConfirmation"}>
             <a>Send confirmation email again?</a>
           </Link>
         </div>

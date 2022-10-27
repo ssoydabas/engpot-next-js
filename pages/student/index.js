@@ -56,7 +56,7 @@ function Student() {
   });
 
   const fetchLessonHistory = async (studentId) => {
-    const url = new URL(`${process.env.API_URL}/getLessonHistory`);
+    const url = new URL(`${process.env.API_URL}/v1/student/fetchLessonHistory`);
     url.searchParams.append("studentId", studentId);
     const requestConfig = {
       url: url,
@@ -65,16 +65,17 @@ function Student() {
         Authorization: `Bearer ${localStorage.getItem("authenticationToken")}`,
       },
     };
-    const dataProcessingLogic = (data) => {
+    const dataProcessingLogic = ({ lessonHistory }) => {
       setIsLoading(false);
-      const { lessonHistory } = data;
       setLessonHistory(lessonHistory);
     };
     sendRequest(requestConfig, dataProcessingLogic);
   };
 
   const fetchAssignmentHistory = async (studentId) => {
-    const url = new URL(`${process.env.API_URL}/getAssignmentHistory`);
+    const url = new URL(
+      `${process.env.API_URL}/v1/student/fetchAssignmentHistory`
+    );
     url.searchParams.append("studentId", studentId);
 
     const requestConfig = {
@@ -84,9 +85,8 @@ function Student() {
         Authorization: `Bearer ${localStorage.getItem("authenticationToken")}`,
       },
     };
-    const dataProcessingLogic = (data) => {
+    const dataProcessingLogic = ({ assignmentHistory }) => {
       setIsLoading(false);
-      const { assignmentHistory } = data;
       setAssignmentHistory(assignmentHistory);
     };
     sendRequest(requestConfig, dataProcessingLogic);

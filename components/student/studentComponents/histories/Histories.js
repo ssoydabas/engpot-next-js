@@ -18,7 +18,7 @@ function Histories({
 
   const fetchTeacherByStudentId = () => {
     const url = new URL(
-      `${process.env.API_URL}/findTeacherByStudentId/${student._id}`
+      `${process.env.API_URL}/v1/admin/findTeacherByStudentId/${student._id}` // ! Leaking to admin side
     );
 
     const requestConfig = {
@@ -29,9 +29,8 @@ function Histories({
       },
     };
 
-    const dataProcessingLogic = (data) => {
+    const dataProcessingLogic = ({ teacher }) => {
       http.setIsLoading(false);
-      const { teacher } = data;
       setTeacher(teacher);
     };
 

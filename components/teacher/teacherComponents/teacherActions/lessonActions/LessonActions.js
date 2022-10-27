@@ -77,7 +77,7 @@ function LessonActions({
     };
 
     const requestConfig = {
-      url: `${process.env.API_URL}/${
+      url: `${process.env.API_URL}/v1/teacher/${
         hasPlannedLesson ? "concludeLesson" : "planLesson"
       }`,
       method: "POST",
@@ -88,10 +88,8 @@ function LessonActions({
       body: data,
     };
 
-    const dataProcessingLogic = (data) => {
+    const dataProcessingLogic = ({ message, student }) => {
       http.setIsLoading(false);
-      const { message } = data;
-      const { student } = data;
       dispatch(feedbackActions.setMessage(message));
       setDisplayActionForm(false);
       setSelectedStudent(student);

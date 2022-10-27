@@ -56,15 +56,14 @@ function Teacher() {
 
   const fetchStudents = (teacherId) => {
     const requestConfig = {
-      url: `${process.env.API_URL}/studentsByTeacherId/${teacherId}`,
+      url: `${process.env.API_URL}/v1/teacher/studentsByTeacherId/${teacherId}`,
       headers: {
         "content-type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("authenticationToken")}`,
       },
     };
-    const dataProcessingLogic = (data) => {
+    const dataProcessingLogic = ({ students }) => {
       setIsLoading(false);
-      const { students } = data;
       setStudents(students);
     };
 

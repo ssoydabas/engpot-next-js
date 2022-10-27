@@ -47,7 +47,7 @@ function AssignmentAction({
     };
 
     const requestConfig = {
-      url: `${process.env.API_URL}/addAssignment`,
+      url: `${process.env.API_URL}/v1/teacher/assignTask`,
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -56,10 +56,8 @@ function AssignmentAction({
       body: data,
     };
 
-    const dataProcessingLogic = (data) => {
+    const dataProcessingLogic = ({ message, student }) => {
       http.setIsLoading(false);
-      const { message } = data;
-      const { student } = data;
       dispatch(feedbackActions.setMessage(message));
       setDisplayActionForm(false);
       setSelectedStudent(student);

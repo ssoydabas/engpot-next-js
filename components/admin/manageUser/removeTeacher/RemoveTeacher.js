@@ -16,11 +16,10 @@ function RemoveTeacher({
 
   useEffect(() => {
     const requestConfig = {
-      url: `${process.env.API_URL}/findTeacherByStudentId/${userToManage._id}`,
+      url: `${process.env.API_URL}/v1/admin/findTeacherByStudentId/${userToManage._id}`,
     };
-    const dataProcessingLogic = (data) => {
+    const dataProcessingLogic = ({ teacher }) => {
       http.setIsLoading(false);
-      const { teacher } = data;
       setTeacherObject(teacher);
     };
     http.sendRequest(requestConfig, dataProcessingLogic);
@@ -42,17 +41,16 @@ function RemoveTeacher({
     };
 
     const requestConfig = {
-      url: `${process.env.API_URL}/removeTeacherFromStudent`,
-      method: "POST",
+      url: `${process.env.API_URL}/v1/admin/deleteTeacherStudent`,
+      method: "DELETE",
       headers: {
         "content-type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("authenticationToken")}`,
       },
       body: data,
     };
-    const dataProcessingLogic = (data) => {
+    const dataProcessingLogic = ({ message }) => {
       http.setIsLoading(false);
-      const { message } = data;
       dispatch(feedbackActions.setMessage(message));
       setUserToManage(null);
       refreshUsersHandler();

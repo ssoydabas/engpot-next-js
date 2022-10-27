@@ -28,7 +28,6 @@ function AddLesson({ teacher, setTeacher, addLesson, setAddLesson, http }) {
 
     const data = {
       userId: teacher._id,
-      action: "add",
       event: {
         title: studentRef.current.value,
         start: addLesson.start,
@@ -37,7 +36,7 @@ function AddLesson({ teacher, setTeacher, addLesson, setAddLesson, http }) {
     };
 
     const requestConfig = {
-      url: `${process.env.API_URL}/publicSchedule/update`,
+      url: `${process.env.API_URL}/v1/schedule/updateSchedule/add`,
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -45,9 +44,8 @@ function AddLesson({ teacher, setTeacher, addLesson, setAddLesson, http }) {
       },
       body: data,
     };
-    const dataProcessingLogic = (data) => {
+    const dataProcessingLogic = ({ message }) => {
       http.setIsLoading(false);
-      const { message } = data;
       dispatch(feedbackActions.setMessage(message));
       setAddLesson(null);
       setTeacher({ ...teacher });

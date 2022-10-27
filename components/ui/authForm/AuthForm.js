@@ -26,20 +26,20 @@ function AuthForm({
       e.preventDefault();
 
       const requestConfig = {
-        url: `${process.env.API_URL}/login`,
+        url: `${process.env.API_URL}/v1/user/verifyUser`,
         method: "POST",
         headers: {
           "content-type": "application/json",
         },
         body: formData,
       };
-      const dataProcessingLogic = (data) => {
+      const dataProcessingLogic = ({ user, authenticationToken }) => {
         http.setIsLoading(false);
         handlers.toggleFormDisplayHandler();
         dispatch(
           authenticationActions.setAuthenticationToken({
-            authenticationToken: data.authenticationToken,
-            user: data.user,
+            authenticationToken,
+            user,
           })
         );
       };
@@ -50,34 +50,32 @@ function AuthForm({
       e.preventDefault();
 
       const requestConfig = {
-        url: `${process.env.API_URL}/signUp`,
+        url: `${process.env.API_URL}/v1/user/createUser`,
         method: "POST",
         headers: {
           "content-type": "application/json",
         },
         body: formData,
       };
-      const dataProcessingLogic = (data) => {
+      const dataProcessingLogic = ({ message }) => {
         http.setIsLoading(false);
         handlers.toggleFormDisplayHandler();
-        const { message } = data;
         dispatch(feedbackActions.setMessage(message));
       };
       http.sendRequest(requestConfig, dataProcessingLogic);
     },
 
-    forgotPasswordRequest: (e) => {
+    requestNewPassword: (e) => {
       e.preventDefault();
 
       const requestConfig = {
-        url: `${process.env.API_URL}/requestPasswordReset`,
+        url: `${process.env.API_URL}/v1/user/requestNewPassword`,
         method: "POST",
         headers: { "content-type": "application/json" },
         body: formData,
       };
-      const dataProcessingLogic = (data) => {
+      const dataProcessingLogic = ({message}) => {
         http.setIsLoading(false);
-        const { message } = data;
         dispatch(feedbackActions.setMessage(message));
         handlers.toggleFormDisplayHandler();
       };
@@ -91,7 +89,7 @@ function AuthForm({
       {formMode === "login" && (
         <LoginForm
           loginRequest={handlers.loginRequest}
-          forgotPasswordRequest={handlers.forgotPasswordRequest}
+          requestNewPassword={handlers.requestNewPassword}
           changeFormModeHandler={handlers.changeFormModeHandler}
           formData={formData}
           setFormData={setFormData}

@@ -31,15 +31,14 @@ function ResendConfirmation() {
     };
 
     const requestConfig = {
-      url: `${process.env.API_URL}/resendConfirmation`,
+      url: `${process.env.API_URL}/v1/user/sendConfirmationCode`,
       method: "POST",
       headers: { "content-type": "application/json" },
       body: data,
     };
 
-    const dataProcessingLogic = (data) => {
+    const dataProcessingLogic = ({message}) => {
       setIsLoading(false);
-      const { message } = data;
       dispatch(feedbackActions.setMessage(message));
       router.push("/");
     };

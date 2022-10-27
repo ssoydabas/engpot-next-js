@@ -10,7 +10,7 @@ function LoginForm({
   changeFormModeHandler,
   setFormData,
   loginRequest,
-  forgotPasswordRequest,
+  requestNewPassword,
 }) {
   const [isForgotPassword, setIsForgotPassword] = useState(false);
 
@@ -64,7 +64,7 @@ function LoginForm({
       {isForgotPassword && (
         <ForgotPasswordForm
           setFormData={setFormData}
-          forgotPasswordRequest={forgotPasswordRequest}
+          requestNewPassword={requestNewPassword}
         />
       )}
     </>

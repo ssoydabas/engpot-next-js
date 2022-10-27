@@ -41,7 +41,7 @@ function AssignStudent({
       };
 
       const requestConfig = {
-        url: `${process.env.API_URL}/assignStudentToTeacher`,
+        url: `${process.env.API_URL}/v1/admin/createTeacherStudent`,
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -51,9 +51,8 @@ function AssignStudent({
         },
         body: data,
       };
-      const dataProcessingLogic = (data) => {
+      const dataProcessingLogic = ({message}) => {
         http.setIsLoading(false);
-        const { message } = data;
         dispatch(feedbackActions.setMessage(message));
         setUserToManage(null);
         refreshUsersHandler();

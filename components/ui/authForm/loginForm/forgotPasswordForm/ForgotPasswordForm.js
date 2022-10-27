@@ -5,7 +5,7 @@ import Form from "react-bootstrap/Form";
 
 import Button from "../../../components/button/Button.js";
 
-function ForgotPasswordForm({ setFormData, forgotPasswordRequest }) {
+function ForgotPasswordForm({ setFormData, requestNewPassword }) {
   const passwordResetEmailRef = useRef();
 
   const formDataHandler = () => {
@@ -25,7 +25,7 @@ function ForgotPasswordForm({ setFormData, forgotPasswordRequest }) {
           onChange={formDataHandler}
         />
       </Form.Group>
-      <Button type="submit" onClick={forgotPasswordRequest}>
+      <Button type="submit" onClick={requestNewPassword}>
         Submit
       </Button>
     </Form>

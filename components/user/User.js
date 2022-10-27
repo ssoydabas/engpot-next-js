@@ -20,7 +20,7 @@ function User({
         newSurname: surname,
       };
       const requestConfig = {
-        url: `${process.env.API_URL}/changeProfileName`,
+        url: `${process.env.API_URL}/v1/user/changePersonalInformation`,
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -30,20 +30,20 @@ function User({
         },
         body: data,
       };
-      const dataProcessingLogic = (data) => {
+      const dataProcessingLogic = ({ user, message }) => {
         http.setIsLoading(false);
-        const { user } = data;
         dispatch(authenticationActions.refreshUserObject({ user }));
+        dispatch(feedbackActions.setMessage(message));
       };
       http.sendRequest(requestConfig, dataProcessingLogic);
     },
 
-    passwordChangeRequest: () => {
+    requestNewPassword: () => {
       const data = {
         email: user.personalInfo.emailInfo.email,
       };
       const requestConfig = {
-        url: `${process.env.API_URL}/requestPasswordReset`,
+        url: `${process.env.API_URL}/v1/user/requestNewPassword`,
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -53,9 +53,8 @@ function User({
         },
         body: data,
       };
-      const dataProcessingLogic = (data) => {
+      const dataProcessingLogic = ({ message }) => {
         http.setIsLoading(false);
-        const { message } = data;
         dispatch(authenticationActions.terminateAuthenticationToken());
         dispatch(feedbackActions.setMessage(message));
         router.replace("/");
@@ -71,7 +70,7 @@ function User({
         <Identity
           user={user}
           changeNameRequest={handlers.changeNameRequest}
-          passwordChangeRequest={handlers.passwordChangeRequest}
+          requestNewPassword={handlers.requestNewPassword}
         />
       </Container>
     </>

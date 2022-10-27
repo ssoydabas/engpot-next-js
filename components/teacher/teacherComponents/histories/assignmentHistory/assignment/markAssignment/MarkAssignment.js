@@ -32,7 +32,7 @@ function MarkAssignment({
     };
 
     const requestConfig = {
-      url: `${process.env.API_URL}/markAssignment`,
+      url: `${process.env.API_URL}/v1/teacher/markTask`,
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -41,9 +41,8 @@ function MarkAssignment({
       body: data,
     };
 
-    const dataProcessingLogic = (data) => {
+    const dataProcessingLogic = ({ message }) => {
       http.setIsLoading(false);
-      const { message } = data;
       dispatch(feedbackActions.setMessage(message));
       setShowAssignment(null);
       fetchAssignmentHistoryHandler();

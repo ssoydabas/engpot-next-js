@@ -8,7 +8,7 @@ import Form from "react-bootstrap/Form";
 import Gear from "../../../public/svg/Gear.js";
 import Button from "../../ui/components/button/Button.js";
 
-function Identity({ user, changeNameRequest, passwordChangeRequest }) {
+function Identity({ user, changeNameRequest, requestNewPassword }) {
   const [editMode, setEditMode] = useState(false);
 
   const nameRef = useRef();
@@ -25,8 +25,8 @@ function Identity({ user, changeNameRequest, passwordChangeRequest }) {
     setEditMode(false);
   };
 
-  const submitPasswordChangeRequest = () => {
-    passwordChangeRequest();
+  const submitRequestNewPassword = () => {
+    requestNewPassword();
 
     setEditMode(false);
   };
@@ -72,7 +72,7 @@ function Identity({ user, changeNameRequest, passwordChangeRequest }) {
             <div className={styles["email"]}>
               {!editMode && user.personalInfo.emailInfo.email}
               {editMode && (
-                <Button type={"button"} onClick={submitPasswordChangeRequest}>
+                <Button type={"button"} onClick={submitRequestNewPassword}>
                   Request Password Change
                 </Button>
               )}

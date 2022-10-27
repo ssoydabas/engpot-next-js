@@ -54,11 +54,10 @@ function Admin(props) {
 
   const refreshUsersHandler = () => {
     const requestConfig = {
-      url: `${process.env.API_URL}/fetchAllUsers/all`,
+      url: `${process.env.API_URL}/v1/user/fetchUsers`,
     };
-    const dataProcessingLogic = (data) => {
+    const dataProcessingLogic = ({ users }) => {
       setIsLoading(false);
-      const { users } = data;
       setUsers(users);
     };
     sendRequest(requestConfig, dataProcessingLogic);
@@ -90,7 +89,7 @@ function Admin(props) {
 export default Admin;
 
 export async function getStaticProps(context) {
-  let response = await fetch(`${process.env.API_URL}/fetchAllUsers/all`);
+  let response = await fetch(`${process.env.API_URL}/v1/user/fetchUsers`);
   response = await response.json();
 
   const { users } = response;

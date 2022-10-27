@@ -68,7 +68,7 @@ function Schedule() {
   });
 
   const fetchTeacherSchedule = (teacherId) => {
-    const url = new URL(`${process.env.API_URL}/publicSchedule/fetch`);
+    const url = new URL(`${process.env.API_URL}/v1/schedule/fetchSchedule`);
     url.searchParams.append("userId", teacherId);
 
     const requestConfig = {
@@ -78,9 +78,8 @@ function Schedule() {
         Authorization: `Bearer ${localStorage.getItem("authenticationToken")}`,
       },
     };
-    const dataProcessingLogic = (data) => {
+    const dataProcessingLogic = ({ publicSchedule }) => {
       setIsLoading(false);
-      const { publicSchedule } = data;
       setTeacherSchedule(publicSchedule);
     };
 

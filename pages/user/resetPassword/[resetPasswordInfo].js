@@ -25,18 +25,18 @@ function ConfirmYourAccountPage() {
     useHttp();
 
   const newPasswordRef = useRef();
-  const confirmNewPasswordRef = useRef();
+  const newPasswordConfirmRef = useRef();
 
   const submitNewPasswordHandler = (e) => {
     e.preventDefault();
     const data = {
       resetToken: router.query.resetPasswordInfo,
       newPassword: newPasswordRef.current.value,
-      confirmNewPassword: confirmNewPasswordRef.current.value,
+      newPasswordConfirm: newPasswordConfirmRef.current.value,
     };
 
     const requestConfig = {
-      url: `${process.env.API_URL}/resetPassword`,
+      url: `${process.env.API_URL}/v1/user/resetPassword`,
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -71,7 +71,7 @@ function ConfirmYourAccountPage() {
         </Form.Group>
         <Form.Group>
           <Form.Label>Password Confirm</Form.Label>
-          <Form.Control type="password" ref={confirmNewPasswordRef} />
+          <Form.Control type="password" ref={newPasswordConfirmRef} />
         </Form.Group>
         <Button type={"submit"}>Submit</Button>
       </Form>

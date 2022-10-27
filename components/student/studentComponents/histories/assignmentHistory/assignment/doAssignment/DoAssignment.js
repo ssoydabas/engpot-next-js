@@ -31,7 +31,7 @@ function DoAssignment({
     };
 
     const requestConfig = {
-      url: `${process.env.API_URL}/doAssignment`,
+      url: `${process.env.API_URL}/v1/student/completeSingleAssignment`,
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -39,9 +39,8 @@ function DoAssignment({
       },
       body: data,
     };
-    const dataProcessingLogic = (data) => {
+    const dataProcessingLogic = ({ message }) => {
       http.setIsLoading(false);
-      const { message } = data;
       dispatch(feedbackActions.setMessage(message));
       fetchAssignmentHistoryHandler(student._id);
       setShowAssignment(null);
