@@ -28,7 +28,7 @@ function ConfirmAccount() {
 
   const sendRequestHandler = (emailConfirmationCode) => {
     const requestConfig = {
-      url: `${process.env.API_URL}/confirmAccount/${emailConfirmationCode}`,
+      url: `${process.env.API_URL}/v1/user/confirmAccount/${emailConfirmationCode}`,
     };
     const dataProcessingLogic = (data) => {
       const { message } = data;
