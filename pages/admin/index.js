@@ -14,7 +14,7 @@ import AdminPanel from "../../components/admin/AdminPanel.js";
 import LoadingSpinner from "../../components/ui/components/loadingSpinner/LoadingSpinner.js";
 import Error from "../../components/ui/components/error/Error.js";
 
-function Admin(props) {
+function Admin() {
   const router = useRouter();
   const dispatch = useDispatch();
   const [users, setUsers] = useState(null);
@@ -29,11 +29,6 @@ function Admin(props) {
     }
   }
 
-  useEffect(() => {
-    const { users } = props;
-    setUsers(users);
-  }, []);
-
   const {
     httpError,
     isLoading,
@@ -42,6 +37,21 @@ function Admin(props) {
     setIsLoading,
     setHttpError,
   } = useHttp();
+
+  useEffect(() => {
+    const requestConfig = {
+      url: `${process.env.API_URL}/v1/user/fetchUsers`,
+      headers: {
+        "content-type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("authenticationToken")}`,
+      },
+    };
+    const dataProcessingLogic = ({ users }) => {
+      setIsLoading(false);
+      setUsers(users);
+    };
+    sendRequest(requestConfig, dataProcessingLogic);
+  }, []);
 
   const http = {
     httpError,
@@ -55,6 +65,10 @@ function Admin(props) {
   const refreshUsersHandler = () => {
     const requestConfig = {
       url: `${process.env.API_URL}/v1/user/fetchUsers`,
+      headers: {
+        "content-type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("authenticationToken")}`,
+      },
     };
     const dataProcessingLogic = ({ users }) => {
       setIsLoading(false);
@@ -87,29 +101,3 @@ function Admin(props) {
 }
 
 export default Admin;
-
-export async function getStaticProps(context) {
-  let response = await fetch(`${process.env.API_URL}/v1/user/fetchUsers`);
-  response = await response.json();
-
-  const { users } = response;
-
-  return {
-    props: {
-      users,
-    },
-  };
-}
-
-// export async function getServerSideProps(context) {
-//   let response = await fetch(`${process.env.API_URL}/fetchAllUsers/all`);
-//   response = await response.json();
-
-//   const { users } = response;
-
-//   return {
-//     props: {
-//       users,
-//     },
-//   };
-// }

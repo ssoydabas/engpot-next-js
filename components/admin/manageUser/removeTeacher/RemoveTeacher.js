@@ -17,6 +17,10 @@ function RemoveTeacher({
   useEffect(() => {
     const requestConfig = {
       url: `${process.env.API_URL}/v1/admin/findTeacherByStudentId/${userToManage._id}`,
+      headers: {
+        "content-type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("authenticationToken")}`,
+      },
     };
     const dataProcessingLogic = ({ teacher }) => {
       http.setIsLoading(false);
