@@ -12,6 +12,8 @@ import Container from "react-bootstrap/Container";
 import RemoveTeacher from "./removeTeacher/RemoveTeacher.js";
 import AssignStudent from "./assignStudent/AssignStudent.js";
 
+import DeleteUser from "./deleteUser/DeleteUser";
+
 import Backdrop from "../../ui/components/backdrop/Backdrop.js";
 import Button from "../../ui/components/button/Button.js";
 
@@ -271,6 +273,15 @@ function ManageUser({
             </div>
           </Container>
         </Container>
+
+        <DeleteUser
+          userId={userToManage._id}
+          setUserToManage={setUserToManage}
+          refreshUsersHandler={refreshUsersHandler}
+          dispatch={dispatch}
+          feedbackActions={feedbackActions}
+          http={http}
+        />
 
         <Button type="submit">Submit</Button>
       </Form>
