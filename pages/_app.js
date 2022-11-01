@@ -11,9 +11,15 @@ import store from "../store/store.js";
 import AuthenticationRefresher from "../util/components/authenticationRefresher/AuthenticationRefresher.js";
 import SSRProvider from "react-bootstrap/SSRProvider";
 
+import { hotjar } from "react-hotjar";
+import { useEffect } from "react";
+
 import Layout from "../components/ui/layout/Layout.js";
 
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    hotjar.initialize(process.env.HOTJAR_ID, process.env.HOTJAR_VERSION);
+  }, []);
 
   return (
     <Provider store={store}>

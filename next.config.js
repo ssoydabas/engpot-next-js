@@ -15,5 +15,7 @@ module.exports = withTM({
   env: {
     NEXT_ENV: process.env.NEXT_ENV,
     API_URL: process.env.API_URL,
+    HOTJAR_ID: process.env.HOTJAR_ID,
+    HOTJAR_VERSION: process.env.HOTJAR_ID,
   },
 });
